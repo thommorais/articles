@@ -1,0 +1,21 @@
+.favorites{
+
+  .folder, .favorite{
+    margin: 0 5px 10px;
+
+    span{
+      max-width: 120px;
+    }
+
+
+    button{
+      border-radius: 4px;
+      border: 1px solid $color-one;
+      background-color: transparent;
+      color: $color-two;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+}

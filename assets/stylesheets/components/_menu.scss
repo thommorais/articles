@@ -1,0 +1,25 @@
+.icones-esquerda,
+.icones-direita{
+
+  ul{
+    display: flex;
+  }
+
+  li{
+
+    a{
+      display: flex;
+      height: 60px;
+      width: 60px;
+      justify-content: center;
+      align-items: center;
+      color: $color-three;
+      font-size: 21px;
+    }
+  }
+
+  .separador{
+    display: none;
+  }
+  
+}

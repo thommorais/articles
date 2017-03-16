@@ -1,0 +1,63 @@
+#stOverlay {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  background-color: $color-three;
+  opacity: .95;
+  display: none;
+}
+
+.overlay-opened{
+
+  .overlay-content{
+    display: block;
+  }
+
+  #stOverlay {
+    display: block;
+  }
+
+}
+
+.overlay-content{
+  position: fixed;
+  display: none;
+  top: 60px;
+  left: 0;
+  padding: 30px;
+  height: calc(100vh - 60px);
+  z-index: 99;
+  overflow: scroll;
+
+  > h2{
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 22px;
+    color: $color-two;
+  }
+
+
+  .close{
+    position: absolute;
+    z-index: 999;
+    top: 30px;
+    right: 30px;
+    background: transparent;
+    border: 0;
+
+
+    &:before{
+      font-family: 'lg';
+      color: $color-two;
+      font-size: em(32px);
+      cursor: pointer;
+      outline: none;
+      content: "\e070";
+    }
+
+  }
+
+}

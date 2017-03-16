@@ -1,0 +1,35 @@
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background: $color-two;
+  box-shadow: 0 2px 4px 0 rgba($color-three,0.05);
+}
+
+#header-line-1{
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-line-2{
+  font-size: 11px;
+  font-weight: 300;
+  color: $color-four;
+}
+
+.centro{
+  @extend .centered;
+
+  a{
+    margin: 5px auto 0;
+    display: table;
+    font-size: 0;
+  }
+
+  img{
+    max-height: 31px;
+  }
+
+}

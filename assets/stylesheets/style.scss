@@ -1,0 +1,36 @@
+/*********************************************************************
+*  =Pre-project
+*********************************************************************/
+/*
+    Definindo  o projeto
+
+    - Base line e tamanho da fonte
+    - Analisar o grid
+    - Browser suport
+*/
+
+@import "compass";
+
+@import "base/variables";
+@import "base/reset";
+@import "base/svg";
+
+
+@import "fonts/variables";
+@import "fonts/mixins";
+@import "fonts/path";
+@import "fonts/core";
+@import "fonts/larger";
+@import "fonts/fixed-width";
+@import "fonts/list";
+@import "fonts/bordered-pulled";
+@import "fonts/animated";
+@import "fonts/rotated-flipped";
+@import "fonts/stacked";
+@import "fonts/icons";
+@import "fonts/screen-reader";
+
+
+@import "core/*";
+@import "components/*";
+@import "sections/*";

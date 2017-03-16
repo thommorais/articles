@@ -1,10 +1,28 @@
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
 .favorites{
+
+  .folder{
+      cursor: move;
+  }
 
   .folder, .favorite{
     margin: 0 5px 10px;
 
     span{
       max-width: 120px;
+      height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
 

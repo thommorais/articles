@@ -41,11 +41,22 @@
 	.close{
 		top: 10px;
 		right: 10px;
+		height: 30px;
+		width: 30px;
+		padding: 1px 0;
+		border-radius: 15px;
 		color: $color-five;
 
 		&:before{
 			color: $color-five;
+			font-size: 1.9em;
+		}
 
+		&:hover{
+			background-color: $color-seven;
+			&:before{
+				color: $color-two;
+			}
 		}
 
 	}
@@ -69,8 +80,8 @@
 		padding: 5px 10px;
 
 		&.save{
-			background: #0bcc6c;
-			border: 1px solid #0bcc6c;
+			background: $color-eight;
+			border: 1px solid $color-eight;
 			color: $color-two;
 			font-size: 15px;
 

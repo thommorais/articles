@@ -8,6 +8,8 @@ $color-three : #262626;
 $color-four : #000;
 $color-five : #D8D8D8;
 $color-six : #76BD1D;
+$color-seven: #F44E4B;
+$color-eight : #3EBB64;
 
 $project-font-size : 16px;
 
@@ -41,7 +43,6 @@ $project-font-size : 16px;
 @function em($target, $context: $project-font-size) {
   @return flex($target, $context, "em");
 }
-
 
 .centered{
   position: absolute;

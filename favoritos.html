@@ -80,12 +80,27 @@
         <div class="favorites-folders">
 
           <span id="folders">
-            <a href="paginas.html" class="folder">
+            <a href="paginas.html" class="folder" draggable="true">
               <svg class="svg folder-svg" role="img" title="Folder">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
               </svg>
               <span>Politica</span>
             </a>
+
+            <!-- <a href="paginas.html" class="folder" draggable="true">
+              <svg class="svg folder-svg" role="img" title="Folder">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
+              </svg>
+              <span>Esportes</span>
+            </a>
+
+
+            <a href="paginas.html" class="folder" draggable="true">
+              <svg class="svg folder-svg" role="img" title="Folder">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
+              </svg>
+              <span>Teste</span>
+            </a> -->
           </span>
 
           <a href="#" class="folder new">
@@ -106,7 +121,7 @@
               <form id="new-folder-form">
 
                 <div class="field">
-                  <input type="text" id="name-of-folder" placeholder="Nome da nova pasta" />
+                  <input type="text" id="name-of-folder" placeholder="Nome da nova pasta" autocomplete="off" />
                 </div>
 
                 <button type="submit" class="save">salvar</button>
@@ -150,6 +165,7 @@
 
     <script>
 
+
       class Modal {
 
         constructor(el) {
@@ -161,7 +177,7 @@
           this.close = this.modal.querySelector('.md-close')
 
           this.close.addEventListener( 'click', this.closer.bind(this))
-          this.save.addEventListener( 'submit', this._save.bind(this))
+          this.save.addEventListener( 'submit', this._add.bind(this))
           el.addEventListener('click', this.opner.bind(this))
 
         }
@@ -174,28 +190,100 @@
           this.modal.classList.remove('md-show')
         }
 
-        _save(e) {
+        _add(e) {
           e.preventDefault()
-          this.wrapper.insertAdjacentHTML('beforeend', this._template(this.input.value))
+          this.wrapper.insertAdjacentHTML('beforeend', this.template(this.input.value))
           this.input.value = ''
           this.closer()
         }
 
-        _template(value) {
-          return `<a href="#" class="folder">
+        template(value) {
+          return `<a href="#" class="folder" draggable="true">
                     <svg class="svg folder-svg" role="img" title="Folder">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
+                      <use xlink:href="#folder"></use>
                     </svg>
                     <span>${value}</span>
                   </a>`
         }
 
-
       }
 
       let newFolder = document.querySelector('.new')
-
       new Modal(newFolder)
+
+      class Drag {
+
+        constructor(folder) {
+
+          this.folder = folder
+          this.dragSrcEl = ''
+
+          this.folder.addEventListener( 'dragstart', this.handleDragStart)
+          this.folder.addEventListener('dragenter', this.handleDragEnter)
+          this.folder.addEventListener('dragover', this.handleDragOver)
+          this.folder.addEventListener('dragleave', this.handleDragLeave)
+          this.folder.addEventListener('drop', this.handleDrop)
+          this.folder.addEventListener('dragend', this.handleDragEnd)
+
+        }
+
+        handleDragStart(e){
+
+          this.dragSrcEl = e.path[0]
+          e.dataTransfer.effectAllowed = 'move'
+          e.dataTransfer.setData('text/html', e.path[0].innerHTML)
+
+        }
+
+        handleDragEnter(e){
+          e.path[0].classList.add('over')
+        }
+
+        handleDragOver(e){
+
+          if(e.path[0].preventDefault)
+              e.path[0].preventDefault()
+
+          e.path[0].dataTransfer.dropEffect = 'move'  // See the section on the DataTransfer object.
+
+          return false
+        }
+
+        handleDragLeave(e){
+           e.path[0].classList.remove('over')
+        }
+
+        handleDrop(e){
+
+          if (e.path[0].stopPropagation)
+              e.path[0].stopPropagation()
+
+          if (dragSrcEl != e) {
+
+            this.dragSrcEl.innerHTML = e.path[0].innerHTML
+            e.path[0].innerHTML = e.path[0].dataTransfer.getData('text/html')
+
+          }
+
+          return false
+
+        }
+
+        handleDragEnd(e){
+          console.log(e)
+          e.path[0].classList.remove('over')
+        }
+
+
+      }
+
+      let folders = document.querySelectorAll('#folders .folder')
+
+      for(let folder of folders){
+          folder = new Drag(folder)
+      }
+
+
 
     </script>
 

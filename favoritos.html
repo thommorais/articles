@@ -191,10 +191,15 @@
         }
 
         _add(e) {
+
           e.preventDefault()
+
+          if(!this.input.value) return
+
           this.wrapper.insertAdjacentHTML('beforeend', this.template(this.input.value))
           this.input.value = ''
           this.closer()
+
         }
 
         template(value) {
@@ -211,6 +216,8 @@
       let newFolder = document.querySelector('.new')
       new Modal(newFolder)
 
+
+
       class Drag {
 
         constructor(folder) {
@@ -220,10 +227,10 @@
 
           this.folder.addEventListener( 'dragstart', this.handleDragStart)
           this.folder.addEventListener('dragenter', this.handleDragEnter)
-          this.folder.addEventListener('dragover', this.handleDragOver)
+          // this.folder.addEventListener('dragover', this.handleDragOver)
           this.folder.addEventListener('dragleave', this.handleDragLeave)
-          this.folder.addEventListener('drop', this.handleDrop)
-          this.folder.addEventListener('dragend', this.handleDragEnd)
+          // this.folder.addEventListener('drop', this.handleDrop)
+          // this.folder.addEventListener('dragend', this.handleDragEnd)
 
         }
 
@@ -233,6 +240,7 @@
           e.dataTransfer.effectAllowed = 'move'
           e.dataTransfer.setData('text/html', e.path[0].innerHTML)
 
+
         }
 
         handleDragEnter(e){
@@ -240,6 +248,8 @@
         }
 
         handleDragOver(e){
+
+          console.log(e)
 
           if(e.path[0].preventDefault)
               e.path[0].preventDefault()

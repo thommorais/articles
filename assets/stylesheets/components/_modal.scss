@@ -64,8 +64,15 @@
 }
 
 .md-content {
+
+	.field{
+		margin-bottom: 10px;
+	}
+
 	input{
+		padding: 5px 10px;
 		width: 100%;
+		font-size: 0.8em;
 		color: $color-three;
 		border: 1px solid $color-five;
 	}
@@ -112,4 +119,14 @@
 	-ms-transform: scale(1);
 	transform: scale(1);
 	opacity: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    z-index: 10;
 }

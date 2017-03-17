@@ -12,9 +12,9 @@
 
 .overlay-opened{
 
-  .overlay-content{
-    display: block;
-  }
+  // .overlay-content{
+  //   display: block;
+  // }
 
   #stOverlay {
     display: block;
@@ -33,7 +33,7 @@
   max-width: 1920px;
   height: calc(100vh - 60px);
   z-index: 99;
-  overflow: scroll;
+  overflow: auto;
 
   > h2{
     margin-bottom: 15px;

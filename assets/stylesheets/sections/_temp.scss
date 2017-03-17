@@ -1,0 +1,85 @@
+#stOverlay {
+  z-index: initial !important;
+}
+select{
+  color: #000 !important;
+}
+
+.modal-bg{
+  display: none !important;
+}
+
+#todas-edicoes .busca{
+  margin-top: 0 !important;
+}
+
+#todas-edicoes .edicoes{
+  height: auto !important
+}
+
+
+button.close{
+  font-size: 13px;
+}
+
+body{
+  font-family: 'Roboto', sans-serif !important;
+  color: $color-four;
+}
+
+header#header{
+  height: auto !important;
+}
+
+.bg-geral{
+  background: #fff !important;
+
+}
+
+header#header .icones-esquerda ul li{
+  height: auto !important;
+}
+
+header#header div.centro {
+    position: absolute !important;
+    width: auto !important;
+    line-height: initial !important;
+    height: initial !important;
+    vertical-align: initial !important;
+    text-align: initial !important;
+    font-size: initial !important;
+    font-weight: initial !important;
+    display: initial !important;
+}
+
+header#header div.centro img {
+    vertical-align: top;
+    max-height: 31px !important;
+    margin-top: 0 !important;
+    mix-blend-mode: normal !important;
+}
+
+
+header#header .icones-esquerda ul li a {
+  display: flex !important;
+  height: 60px !important;
+  width: 60px !important;
+  width: 5vw !important;
+}
+
+
+#todas-edicoes .busca input{
+  padding: 5px 10px;
+}
+
+
+#todas-edicoes .busca p.botoes .btn-modal{
+  padding: 5px 10px !important;
+}
+
+#header-line-2{
+  height: auto !important;
+}
+.close{
+  opacity: 1 !important;
+}

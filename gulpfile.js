@@ -9,6 +9,9 @@ var gulp   = require('gulp'),
   var paths = {
     dependencies: [
 
+
+      'assets/javascripts/functions/var.js',
+
       'assets/javascripts/dependencies/classie.js',
 
       'assets/javascripts/libs/lightgallery.js',
@@ -19,7 +22,12 @@ var gulp   = require('gulp'),
       // 'assets/javascripts/libs/lg-zoom.js',
       'assets/javascripts/libs/lg-hash.js',
       'assets/javascripts/libs/lg-pager.js',
-      'assets/javascripts/dependencies/jquery.mousewheel.min.js'
+      'assets/javascripts/dependencies/jquery.mousewheel.min.js',
+
+      'assets/javascripts/functions/dragFolder.js',
+      'assets/javascripts/functions/newFolder.js',
+      'assets/javascripts/functions/main.js'
+
 
     ],
 

@@ -33,12 +33,12 @@
           <div class="icones-esquerda">
 
              <ul>
-                <li><a id="btn-todas-edicoes" class="btn" href="javascript:void(0);" onclick="abrirTodasEdicoes()" title="Outras edições"><i aria-hidden="true" class="fa fa-book"></i></a></li>
-                <li><a title="Índice" id="btn-indice" class="btn" href="javascript:void(0);" onclick="abrirIndice();"><i aria-hidden="true" class="fa fa-list-ul"></i></a></li>
-                <li><a title="Visualizar páginas" id="btn-paginas" class="btn" href="javascript:void(0);" onclick="abrirPaginas()"><i aria-hidden="true" class="fa fa-th-large"></i></a></li>
-                <li><a title="Artigos desta edição" id="btn-artigos" class="btn" href="javascript:void(0);" onclick="abrirArtigos()"><i aria-hidden="true" class="fa fa-newspaper-o"></i></a></li>
+                <li><a id="mdl-todas-edicoes" class="btn" href="javascript:void(0);" onclick="abrirTodasEdicoes()" title="Outras edições"><i aria-hidden="true" class="fa fa-book"></i></a></li>
+                <li><a title="Índice" id="mdl-indice" class="btn" href="javascript:void(0);" onclick="abrirIndice();"><i aria-hidden="true" class="fa fa-list-ul"></i></a></li>
+                <li><a title="Visualizar páginas" id="mdl-paginas" class="btn" href="javascript:void(0);" onclick="abrirPaginas()"><i aria-hidden="true" class="fa fa-th-large"></i></a></li>
+                <li><a title="Artigos desta edição" id="mdl-artigos" class="btn" href="javascript:void(0);" onclick="abrirArtigos()"><i aria-hidden="true" class="fa fa-newspaper-o"></i></a></li>
                 <li><a href="#"><i class="fa fa-film" aria-hidden="true"></i></a></li>
-                <li class="comentarios"><a title="Comentários recebidos" id="btn-comentar" class="btn" href="javascript:void(0);" onclick="abrirComentar();"><i class="fa fa-comment" aria-hidden="true"></i><span id="comment_count" style="display: none;">0</span></a></li>
+                <li class="comentarios"><a title="Comentários recebidos" id="mdl-comentar" class="btn" href="javascript:void(0);" onclick="abrirComentar();"><i class="fa fa-comment" aria-hidden="true"></i><span id="comment_count" style="display: none;">0</span></a></li>
                 <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
              </ul>
 
@@ -55,8 +55,8 @@
 
           <div class="icones-direita">
              <ul>
-                <li><a id="btn-exportar" class="btn" href="javascript:void(0);" onclick="abrirShare();" title="Compartilhar conteúdo"><i aria-hidden="true" class="fa fa-share-alt"></i></a></li>
-                <li><a id="btn-pesquisa" class="btn" href="javascript:void(0);" title="Procurar" onclick="abrirPesquisa();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                <li><a id="mdl-exportar" class="btn" href="javascript:void(0);" onclick="abrirShare();" title="Compartilhar conteúdo"><i aria-hidden="true" class="fa fa-share-alt"></i></a></li>
+                <li><a id="mdl-pesquisa" class="btn" href="javascript:void(0);" title="Procurar" onclick="abrirPesquisa();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-question" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
              </ul>
@@ -80,13 +80,24 @@
         <div class="favorites-folders">
 
           <span id="folders">
-            <a href="paginas.html" class="folder" draggable="true">
+
+            <a class="file favorited drag" data-folder="false" data-name="name of the file" href="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5Njk1Mjc5N15BMl5BanBnXkFtZTgwNDQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg" class="multimidia-item">
+              <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5Njk1Mjc5N15BMl5BanBnXkFtZTgwNDQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg"></figure>
+            </a>
+
+            <a href="paginas.html" class="folder drag" data-folder="true" data-name="politica" draggable="true">
               <svg class="svg folder-svg" role="img" title="Folder">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
               </svg>
               <span>Politica</span>
             </a>
 
+            <a href="paginas.html" class="folder drag" data-folder="true" data-name="esportes" draggable="true">
+              <svg class="svg folder-svg" role="img" title="Folder">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
+              </svg>
+              <span>Esportes</span>
+            </a>
             <!-- <a href="paginas.html" class="folder" draggable="true">
               <svg class="svg folder-svg" role="img" title="Folder">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#folder"></use>
@@ -164,135 +175,6 @@
     <script src="public/all.js"></script>
 
     <script>
-
-
-      class Modal {
-
-        constructor(el) {
-
-          this.wrapper = document.querySelector('#folders')
-          this.modal = document.querySelector('.md-modal')
-          this.save  = this.modal.querySelector('#new-folder-form')
-          this.input = this.modal.querySelector('#name-of-folder')
-          this.close = this.modal.querySelector('.md-close')
-
-          this.close.addEventListener( 'click', this.closer.bind(this))
-          this.save.addEventListener( 'submit', this._add.bind(this))
-          el.addEventListener('click', this.opner.bind(this))
-
-        }
-
-        opner(e) {
-          this.modal.classList.add('md-show')
-        }
-
-        closer() {
-          this.modal.classList.remove('md-show')
-        }
-
-        _add(e) {
-
-          e.preventDefault()
-
-          if(!this.input.value) return
-
-          this.wrapper.insertAdjacentHTML('beforeend', this.template(this.input.value))
-          this.input.value = ''
-          this.closer()
-
-        }
-
-        template(value) {
-          return `<a href="#" class="folder" draggable="true">
-                    <svg class="svg folder-svg" role="img" title="Folder">
-                      <use xlink:href="#folder"></use>
-                    </svg>
-                    <span>${value}</span>
-                  </a>`
-        }
-
-      }
-
-      let newFolder = document.querySelector('.new')
-      new Modal(newFolder)
-
-
-
-      class Drag {
-
-        constructor(folder) {
-
-          this.folder = folder
-          this.dragSrcEl = ''
-
-          this.folder.addEventListener( 'dragstart', this.handleDragStart)
-          this.folder.addEventListener('dragenter', this.handleDragEnter)
-          // this.folder.addEventListener('dragover', this.handleDragOver)
-          this.folder.addEventListener('dragleave', this.handleDragLeave)
-          // this.folder.addEventListener('drop', this.handleDrop)
-          // this.folder.addEventListener('dragend', this.handleDragEnd)
-
-        }
-
-        handleDragStart(e){
-
-          this.dragSrcEl = e.path[0]
-          e.dataTransfer.effectAllowed = 'move'
-          e.dataTransfer.setData('text/html', e.path[0].innerHTML)
-
-
-        }
-
-        handleDragEnter(e){
-          e.path[0].classList.add('over')
-        }
-
-        handleDragOver(e){
-
-          console.log(e)
-
-          if(e.path[0].preventDefault)
-              e.path[0].preventDefault()
-
-          e.path[0].dataTransfer.dropEffect = 'move'  // See the section on the DataTransfer object.
-
-          return false
-        }
-
-        handleDragLeave(e){
-           e.path[0].classList.remove('over')
-        }
-
-        handleDrop(e){
-
-          if (e.path[0].stopPropagation)
-              e.path[0].stopPropagation()
-
-          if (dragSrcEl != e) {
-
-            this.dragSrcEl.innerHTML = e.path[0].innerHTML
-            e.path[0].innerHTML = e.path[0].dataTransfer.getData('text/html')
-
-          }
-
-          return false
-
-        }
-
-        handleDragEnd(e){
-          console.log(e)
-          e.path[0].classList.remove('over')
-        }
-
-
-      }
-
-      let folders = document.querySelectorAll('#folders .folder')
-
-      for(let folder of folders){
-          folder = new Drag(folder)
-      }
-
 
 
     </script>

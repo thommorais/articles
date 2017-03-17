@@ -10,8 +10,35 @@
 
 .favorites{
 
+  .file{
+    display: inline-block;
+    max-width: 120px;
+
+    img{
+      margin: 50px 0;
+      width: 100%;
+    }
+
+  }
+
   .folder{
-      cursor: move;
+
+      &.drag{
+        cursor: move;
+      }
+
+      &.moving{
+        opacity: 0.3;
+      }
+
+      &.over{
+        @include transform(scale(1.1));
+      }
+
+      svg, span{
+        pointer-events: none;
+      }
+
   }
 
   .folder, .favorite{

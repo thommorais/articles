@@ -1,0 +1,50 @@
+#pin-container {
+    background:transparent;
+    position: absolute;
+    width:100%;
+    height:100%;    
+    top:50px;
+    left:0px;  
+    z-index:99999;    
+    background-color: rgba(255, 255, 123,0.2);    
+}
+.pinitem{
+    position:absolute;
+    background-image:url(../pics/pin2.png);    
+    background-repeat:no-repeat;
+    width:37px;
+    height:30px;
+    z-index:999999;
+    cursor:pointer;
+    cursor:hand;
+}
+
+#comentariopin{
+    position:absolute;
+    width:300px;
+    height:260px;    
+    margin:5px;
+    padding:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+    border-color:black;
+    z-index:9999999;
+    background-color: rgba(255, 255, 123,0.8);    
+}
+#comentariocampo{        
+    display:block;
+    width:300px;
+    height:220px;
+}
+#pincoment{
+    width:290px;
+    height:210px;
+}
+#comentariobuttons{    
+    width:300px;
+    height:30px;
+    text-align:center;
+}

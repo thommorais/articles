@@ -1,0 +1,27 @@
+#imagegallery .page{
+    width: 1024px;
+    max-width:2361px;
+    min-height:1878px;
+    max-height:4331px;
+}
+#imagegallery img{
+    width: 1024px;
+    border:1px solid #000;
+    z-index: 9;
+}
+#pagesgallery{
+    width: 1024px;
+    height: 1878px;
+}
+.pagemin{
+    width:156px;
+    height:240px;
+    float:left;
+    overflow:hidden;    
+    display:none;
+    margin-top: 5px;
+}
+.pagemin img{
+    width:140px;
+
+}

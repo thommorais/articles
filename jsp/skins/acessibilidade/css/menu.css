@@ -1,0 +1,14 @@
+.esq{margin:0;padding:0;width:173px;float:left}
+.esq ul, .dir ul{margin:0px;padding:0;list-style-type:none}
+.esq li,.dir li{margin:0px;padding:6px 1px 6px 8px}
+.esq li img,.dir li img{width:9px;height:9px;vertical-align:middle;margin-right:5px}
+.conteudo{padding:4px 2px 4px 7px;width:auto;background:#FFF}
+h1.categoria, h2.categoria{border-bottom:4px solid #868570;color:#150053;padding:1px;letter-spacing:normal;font:bold 12pt helvetica,arial;padding-left:3px;margin-top:1px!important;margin-bottom:0!important}
+h2.categoria{font-size:10pt;border-bottom:1px solid #868570}
+ul.categoria, ul.categoria2, ul.parceiros{list-style-type:none;padding:0;margin:0;background:#F5F3E7}
+ul.categoria2{background:#fff}
+ul.categoria li, ul.categoria2 li{margin:0;padding:0;border:0px;border-bottom:1px solid #DFDCD5;}
+ul.categoria li a, ul.categoria2 li a{display:block;padding:5px;font:normal 8pt helvetica,arial;text-decoration:none;color:#000066;}
+ul.categoria li a:hover{background:#ECEADD url(../img/bg/bg_menu.gif) top right repeat-x;color:#3C4F8A;text-decoration:none!important}
+ul.categoria2 li a:hover{background:#ECEADD;text-decoration:none!important}
+

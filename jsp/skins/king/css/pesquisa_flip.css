@@ -1,0 +1,47 @@
+ #pesquisa_div{
+     overflow:auto;
+     width:93%;
+     height:390px;
+     vertical-align:top;
+     padding-top:10px;
+     padding-left:10px;
+ }
+ #item_pesquisa{
+     font-size: 12px;
+     width:95%;
+     margin-bottom:12px;
+ }
+ #item_pesquisa_conteudo:hover{
+     background: #EDE9BD;
+     cursor:pointer;
+     cursor:hand;
+ }
+ #item_pesquisa_header{
+     width:100%;
+ }
+ #item_pesquisa_texto{
+     overflow:auto;
+     padding-top:5px;
+     vertical-align:top;
+     width:100%;
+     text-transform:none;
+     font-weight: normal;
+ }
+ #item_pesquisa_texto b{
+     color:red;
+ }
+ #item_pesquisa_conteudo{
+     float:left;
+     width:100%;
+     padding-bottom:6px;
+ }
+ #item_pesquisa_foto{
+     padding:5px;
+     vertical-align:middle;
+     text-align:center;
+     float:left;
+ }
+
+ #result{
+     height:400px;
+ }

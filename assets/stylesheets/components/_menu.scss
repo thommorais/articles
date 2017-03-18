@@ -17,11 +17,15 @@
       align-items: center;
       color: $color-three;
       font-size: 21px;
+      text-decoration: none;
     }
+
+    .ativo{
+      background: $color-three;
+      color: $color-two;
+    }
+
   }
 
-  .separador{
-    display: none;
-  }
 
 }

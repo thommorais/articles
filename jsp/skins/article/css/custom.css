@@ -1,0 +1,40 @@
+#facerecomenda{
+    width:900px;
+    height:35px;
+    clear:both;
+    padding:2px;
+    margin:0 auto;
+    text-align:center;  
+    position:relative;
+}
+#faceleft{
+    width:50%;
+    float:left;
+    background-color:white;
+    margin:0 auto;    
+    -moz-border-radius: 10px;
+    border-radius: 10px;    
+    position:relative;
+}
+#faceright{
+    width:50%;
+    float:right;
+    background-color:white;
+    margin:0 auto;    
+    -moz-border-radius: 10px;
+    border-radius: 10px;   
+    position:relative;
+}
+#facerecomenda iframe{    
+    margin:0 auto;
+    border:none; 
+    overflow:hidden; 
+    width:400px; 
+    height:30px;
+    margin-top:3px;
+}
+.closeleft,.closeright{
+    position: absolute;
+    right:1px;
+    top:1px;       
+}

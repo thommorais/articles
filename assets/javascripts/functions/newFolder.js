@@ -1,4 +1,6 @@
+
 class Folder {
+
 
   constructor(el) {
 
@@ -45,6 +47,3 @@ class Folder {
   }
 
 }
-
-let newFolder = document.querySelector('.new')
-new Folder(newFolder)

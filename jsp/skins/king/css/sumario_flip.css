@@ -1,0 +1,122 @@
+#edicao_container{
+    /*background-color: #000000;
+    filter:alpha(opacity=80);
+    -moz-opacity:0.7;
+    opacity: 0.7;*/
+    padding: 5px;
+    table-layout:fixed;  
+    width:645px;
+}
+#edicao_container .box {
+    display:block;
+    float:left;
+    width:110px;
+    height:175px;
+    max-width: 110px;
+    max-height: 175px;
+    padding-top:2px;
+    padding-right:5px;
+    padding-left:5px;
+    padding-bottom:2px;
+    text-align:center;
+    overflow:hidden;
+    margin:auto;
+}
+
+
+
+#edicao_container #selected{    
+    background-color:#FF9494;
+}
+
+#edicao_container .box:hover{
+    background-color:#FF9494;
+}
+
+.filter_box{    
+    font-size:14px;
+    padding:7px;
+    clear:both;
+    width:100%;
+}
+.filter_fields{    
+    background-color: #D2D2D2;
+    -moz-border-radius: 25px 10px / 10px 25px;
+    border-radius: 25px 10px / 10px 25px;
+    width:90%;
+    height:60px;  
+    padding:5px;
+    margin:0 auto;
+}
+.filter_fields input{
+    height:19px;
+}
+.filter_fields label{
+    margin-right: 4px;    
+    padding:3px;
+    max-height:20px;
+}
+.filter_fields field{
+    margin-right: 4px;    
+    padding:3px;
+    max-height:20px;
+}
+.filter_fields .BotaoBranco{
+    height:21px;
+}
+.filter_fields br{
+    width:500px;
+    min-width:500px;
+    clear:both;    
+    margin-top: 5px;
+    height:5px;
+    
+}
+#ui-datepicker-div{
+    z-index: 999999999;
+}
+#edicao_container.box span{
+    display: block;
+    clear:both;
+    text-align: center;  
+}
+
+.box span a img{
+    max-width: 90px;
+    max-height: 120px;    
+    margin-left:-7px;
+    text-align: center;
+}
+
+#edicao_container .box .data{        
+    float:left;    
+    width:120px;
+    max-width: 120px;
+    display:block;
+    margin-left:7px;
+    text-align: center;
+}
+
+#edicao_container .box .datatext{
+    text-align:center;
+    font-size: 8pt;
+    float:left;        
+    display:block;
+    text-align: center;
+}
+
+#edicao_container .box .numero{
+    background-color:blue;
+    color: white;    
+    font-size:8pt;    
+    float:left;
+    display:block;
+    margin-left: 3px;
+    width:40px;
+    max-width:40px;
+    overflow:hidden;
+}
+.imgdisabled {
+    opacity : 0.4;
+    filter: alpha(opacity=40); 
+}

@@ -1,0 +1,30 @@
+#imagegallery {
+    width:768px;
+    min-width: 768px;   
+    height:100%;
+}
+#zoomgallery{
+    width:768px;
+    min-width: 768px;      
+}
+#scroller li {
+    width:768px;
+    min-width: 768px; 
+    min-height: 100%;
+}
+#zoomgallery img{
+    margin: 0px;    
+    vertical-align:top;
+    z-index:99;
+    top:0px;    
+    max-width: 220px;       
+    min-width: 220px;      
+}
+.betterimg{
+    -moz-transition-duration: 200ms;
+    webkit-transform: translate3d(0,0,0) scale(2) !important;      
+}
+.lowimg{
+    -moz-transition-duration: 200ms;
+    -webkit-transform: scale(1);    
+}

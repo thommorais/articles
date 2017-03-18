@@ -1,0 +1,15 @@
+#indice_container{
+    overflow:auto;
+    width:800px;
+    height:360px;
+    clear:both;
+}
+.indice_box{
+    width:110px;
+    height:140px;
+    overflow:hidden;
+    float:left;
+    vertical-align:middle;
+    text-align:center;
+    padding:7px;
+}

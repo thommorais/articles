@@ -1,0 +1,28 @@
+#multimidia { width:100%; height:25px; background:transparent; }
+#multimidia_left { float:left; width:40%; line-height:25px; color:#ffffff; font-size:12px; font-weight:bold; padding:0 0 0 10px; }
+#multimidia_middle { width:20%; height:25px; margin:0 auto; top:40px;  float:left;}
+#multimidia_right { float:right; width:30%; line-height:25px; color:#ffffff; font-size:12px; text-align:right; padding:0 0px 0 0; }
+#multimidia_box { float:left; height:20px; margin:5px 0 0 0 }
+#multimidia a { color:#ffffff }
+
+#footer { width:100%; height:25px; background:url(../img/verde/footer.png) bottom repeat-x; position:absolute; bottom:0; left:0; color:#ffffff }
+.menu_home a { background:url(../img/verde/home.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_home a:hover { background:url(../img/verde/home_hover.png) no-repeat center center; }
+.menu_imprimir a { background:url(../img/verde/imprimir.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_imprimir a:hover { background:url(../img/verde/imprimir_hover.png) no-repeat center center; }
+.menu_procurar a { background:url(../img/verde/procurar.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_procurar a:hover { background:url(../img/verde/procurar_hover.png) no-repeat center center; }
+.menu_contato a { background:url(../img/verde/contato.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_contato a:hover { background:url(../img/verde/contato_hover.png) no-repeat center center; }
+.menu_comentar a { background:url(../img/verde/comentar.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_comentar a:hover { background:url(../img/verde/comentar_hover.png) no-repeat center center; }
+.menu_texto a { background:url(../img/verde/texto.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_texto a:hover { background:url(../img/verde/texto_hover.png) no-repeat center center; }
+.menu_pdf a { background:url(../img/verde/pdf.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_pdf a:hover { background:url(../img/verde/pdf_hover.png) no-repeat center center; }
+.menu_recomendar a { background:url(../img/verde/recomendar.png) no-repeat center center; width:30px; height:30px; display:block; behavior:url(../css/iepngfix.htc); cursor:hand; }
+.menu_recomendar a:hover { background:url(../img/verde/recomendar_hover.png) no-repeat center center; }
+#dock #edicoes_barra { background-image:url(../img/verde/abas_edicoes.png); background-repeat:no-repeat; padding:0; cursor:hand; }
+#dock #indice_barra { background-image:url(../img/verde/abas_indice.png); background-repeat:no-repeat; padding:0; cursor:hand }
+#dock #sumario_barra {  background-image:url(../img/verde/abas_sumario.png); background-repeat:no-repeat; padding:0; cursor:hand }
+#dock #produtos_barra {  background-image:url(../img/verde/cadernos.png); background-repeat:no-repeat; padding:0; cursor:hand; }

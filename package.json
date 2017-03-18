@@ -19,7 +19,9 @@
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^2.3.0",
-    "gulp-print": "^2.0.1"
+    "gulp-print": "^2.0.1",
+    "gulp-uglify": "^2.1.0",
+    "uglify": "^0.1.5"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0"

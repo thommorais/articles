@@ -1,0 +1,103 @@
+@charset "utf-8";
+html, body {
+	background-color:#DBECF2;
+}
+.bg-geral {
+	background:#063686 url(../img/header-botao-bg.png) left bottom repeat-x;
+}
+.enquete.bg-geral {
+	background:#FFFF33 url(../img/header-botao-bg.png) left bottom repeat-x;
+}
+/*
+	FOOTER
+*/
+#footer .bg-geral {
+	background:#063686;
+	border-bottom:1px solid #063686;
+}
+footer#footer .paginacao .total {
+	color:#FFF;
+}
+footer#footer ul li {
+	border-left:1px solid #839BC3;
+}
+footer#footer ul {
+	border:1px solid #063686;
+	border-top:0 none;
+}
+.cor-texto, a.btn {
+	color:#FFFFFF;
+}
+a.btn.ativo {
+	color:#FFFFFF;
+	background:#000000;
+}
+.cor-disabled a, .cor-disabled span {
+	color:#999;
+}
+/*
+	HEDER ENQUETE	
+*/
+/* não selecionado */
+header#header .icones-esquerda .enquete, header#header .icones-esquerda .enquete a {
+	color:#000000;
+}
+/* selecionado */
+header#header .icones-esquerda .enquete.selecionado {
+	background:#191919;
+}
+header#header .icones-esquerda .enquete.selecionado, header#header .icones-esquerda .enquete.selecionado a {
+	color:#FFFFFF;
+}
+/**
+	MODAL
+*/
+.modal input {
+	background:#FFFFFF;
+	color:#666666;
+} /* input text de dentro das modais */
+.modal-bg {
+	background:#000000;
+	opacity:0.8;
+	-webkit-opacity:0.8;
+	-moz-opacity:0.8;
+	filter:alpha(opacity=80);
+} /* background das modais */
+.modal .btn, .modal-texto a, .modal-texto p, .modal label {
+	color:#ffffff;
+} /* cor dos textos de dentro das modais */
+.modal .btn:hover {
+	color:#FFFF00;
+} /* cor do hover dos links*/
+.modal .btn img {
+	border-color:#FFFFFF;
+} /* borda da imagem */
+.modal .btn:hover img {
+	border-color:#FFFF00;
+} /* hover da borda da imagem */
+.btn-modal {
+	background:#000066;
+	border:1px solid #ffffff;
+} /* botao de acao de dentro do modal */
+.btn-modal.disabled {
+	background:#160F40;
+	border:1px solid #7A7672;
+	color:#7A7672;
+} /* botao de acao DESATIVADO de dentro do modal */
+#indice .btn span {
+	background:#FFFFFF;
+	color:#000000;
+} /* numero do indice */
+#indice .btn:hover span {
+	color:#000000;
+	background:#FFFF00;
+} /* hover do numero do indice */
+#exportar .btn.selecionado img, #comentar .btn.selecionado img {
+	border-color:#FFFF00;
+}
+#exportar .btn.selecionado i, #comentar .btn.selecionado i {
+	color:#FFFF00;
+}
+#exportar .btn.selecionado, #comentar .btn.selecionado {
+	color:#FFFF00;
+}

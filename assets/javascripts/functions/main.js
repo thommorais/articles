@@ -1,5 +1,8 @@
-// Menu
+$(document).ready(function() {
+    $("#lightgallery").lightGallery();
+});
 
+// Menu
 
   class Menu {
 
@@ -42,8 +45,16 @@
 
   }
 
-  let btns = document.querySelectorAll('.btn')
+
+ DomReady.ready(function() {
+
+  let btns = document.querySelectorAll('.new-menu')
 
   for(let btn of btns){
     new Menu(btn)
   }
+
+  let newFolder = document.querySelector('.new')
+  new Folder(newFolder)
+
+})

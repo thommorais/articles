@@ -1,0 +1,8 @@
+#enquete { width:280px; margin:0 auto; font-size:18px; }
+#titulo { width:100%; margin:0 auto; background:#ffffff; color:#222222; padding:8px 12px; font-weight:bold; font-size:17px; }
+#titulo IMG { position:absolute; top:0; right:0; cursor:hand }
+#pergunta { width:100%; margin:0 auto; padding:8px 12px; font-weight:bold; font-size:15px }
+#respostas { width:100%; margin:0 auto; padding:8px 12px; line-height:150%; font-size:13px }
+
+.bottom { background:#ffffff; float:left; border:0; padding:3px 4px; margin:0 15px 0 0; cursor:hand; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+.bottom:hover { background:url(../img/bg_button_hover.png) repeat-x #ffffff }

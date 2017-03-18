@@ -2,17 +2,18 @@ var gulp   = require('gulp'),
     print  = require('gulp-print'),
     concat = require('gulp-concat'),
     babel  = require('gulp-babel')
+    uglify = require('gulp-uglify')
     browserSync = require('browser-sync'),
     babelify = require('babelify');
-
 
   var paths = {
     dependencies: [
 
+      'assets/javascripts/dependencies/domready.js',
 
       'assets/javascripts/functions/var.js',
-
       'assets/javascripts/dependencies/classie.js',
+
 
       'assets/javascripts/libs/lightgallery.js',
       // 'assets/javascripts/libs/lg-fullscreen.js',
@@ -35,8 +36,9 @@ var gulp   = require('gulp'),
 
 gulp.task('js', function(){
   gulp.src(paths.dependencies)
-    .pipe(concat('all.js'))
+    .pipe(concat('new-v.js'))
     // .pipe(babel({presets: ['es2015']}))
+    // .pipe(uglify())
     .pipe(gulp.dest('public/'))
 })
 

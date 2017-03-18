@@ -1,0 +1,998 @@
+@charset "utf-8";
+*{
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+div, p, span, input {
+    font-family:'Roboto','Source Sans Pro', Arial, sans-serif;
+}
+a {
+    text-decoration:none;
+}
+.clear {
+    clear:both
+}
+html, body {
+    height:100%;
+}
+.fa-check {
+    -moz-text-shadow: 2px 2px 8px #000000;
+    -webkit-text-shadow: 2px 2px 8px #000000;
+    text-shadow: 2px 2px 8px #000000;
+}
+header#header {
+    position:relative;
+    height:44px;
+    left:0px;
+    right:0px;
+    z-index:2;
+    transition: opacity .2s,-webkit-transform .2s ease-out;
+    transition: transform .2s ease-out,opacity .2s;
+    transition: transform .2s ease-out,opacity .2s,-webkit-transform .2s ease-out;
+    text-align:center;
+}
+#header-line-2{
+    width:100%;
+    height:10px;
+    text-align:center;
+    font-size:0.8em;
+    margin-top:-12px;
+}
+#header-line-2 time{
+    padding: 0 8px 3px;
+    border-radius: 2px;
+    background: #fff;
+    color: #948784;
+}
+header#header .icones-esquerda {
+    position:relative;
+    width:auto;
+    float:left;
+}
+header#header .icones-esquerda ul {
+    display:inline;
+}
+header#header .icones-esquerda ul li {
+    float:left;
+    height:42px;
+}
+header#header .icones-esquerda ul li.separador {
+    width:1px;
+    background:#000000;
+    opacity:0.2;
+    -webkit-opacity: 0.2;
+    -moz-opacity: 0.2;
+    filter:alpha(opacity=20);
+}
+header#header .icones-esquerda ul li a {
+    font-size:24px;
+    line-height:42px;
+    height:42px;
+    vertical-align:middle;
+    text-align:center;
+    width:40px;
+}
+header#header .icones-esquerda .enquete i.fa-question {
+    margin-left:5px;
+    margin-right:5px;
+}
+header#header .icones-esquerda .enquete i.fa-times {
+    margin-right:0px;
+    font-size:12px;
+}
+header#header .icones-esquerda .enquete i {
+    font-size:28px;
+}
+header#header .icones-esquerda .enquete p {
+    vertical-align:middle;
+    line-height:42px;
+}
+header#header .icones-esquerda .enquete p span {
+    line-height:16px;
+}
+header#header .icones-esquerda .enquete {
+    display:inline-block;
+    height:42px;
+    width:260px;
+    font-size:12px;
+    vertical-align:middle;
+}
+header#header .enquete .separador {
+    float:right;
+    width:1px;
+    height:42px;
+    background:#000000;
+    opacity:0.2;
+    -webkit-opacity: 0.2;
+    -moz-opacity: 0.2;
+    filter:alpha(opacity=20);
+}
+div#container.left {
+    float:left;
+}
+div#container.right {
+    float:right;
+    margin-right:10px;
+    font-size:12px;
+}
+div#container {
+    height: 45px;
+}
+div#balance {
+    height: 100%; /* gotta be 100% */
+}
+div.valign {
+    display: -moz-inline-box;/* firefox 2 */
+    display: inline-block;/* everybody else */
+    vertical-align: middle;
+}
+.viewport{
+    height:100%;
+}
+html* div.valign {/* IE 6 and 7 hack */
+    display: inline;
+}
+header#header div.centro img {
+    vertical-align:top;
+    max-height:20px;
+    margin-top:3px;
+    /*mix-blend-mode:difference;*/
+
+}
+header#header div.centro {
+    position:relative;
+    widows:300px;
+    line-height:45px;
+    height:45px;
+    vertical-align:middle;
+    text-align:center;
+    font-size:13px;
+    vertical-align:middle;
+    font-weight:bold;
+    display:inline-table;
+}
+header#header .icones-direita .views {
+    width:60px;
+}
+header#header .icones-direita .views span {
+    font-size:11px;
+    vertical-align:middle;
+}
+header#header .icones-direita .views .fa-eye{
+    font-size:16px;
+}
+header#header .icones-direita .comentarios span {
+    font-size:10px;
+    position:absolute;
+    margin: 1px 0px -0px -15px;
+    color: yellow;
+}
+header#header .icones-direita {
+    position:relative;
+    float:right;
+    width:auto;
+}
+header#header .icones-direita ul {
+    display:inline;
+}
+header#header .icones-direita ul li {
+    float:left;
+    height:42px;
+}
+header#header .icones-direita ul li.separador {
+    width:1px;
+    background:#000000;
+    opacity:0.2;
+    -webkit-opacity: 0.2;
+    -moz-opacity: 0.2;
+    filter:alpha(opacity=20);
+}
+header#header .icones-direita ul li a {
+    font-size:24px;
+    line-height:42px;
+    vertical-align:middle;
+    text-align:center;
+    min-width:40px;
+}
+section article#interna .seta-esquerda {
+    display:block;
+    position:fixed;
+    left:0px;
+    top:0px;
+    bottom:0px;
+    width:40px;
+    z-index:1;
+    background:url(../img/seta-esquerda.png) left center no-repeat;
+}
+section article#interna .seta-direita {
+    display:block;
+    position:fixed;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    width:40px;
+    z-index:1;
+    background:url(../img/seta-direita.png) left center no-repeat;
+}
+section article#interna .seta-esquerda:hover, section article#interna .seta-direita:hover {
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    filter:alpha(opacity=60);
+}
+header#header .icones-esquerda ul li a:hover, header#header .icones-direita ul li a:hover {
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    filter:alpha(opacity=60);
+}
+footer#footer a.logo-maven {
+    background:url(../img/logo-maven.png) no-repeat;
+    position:absolute;
+    right:48px;
+    bottom:4px;
+    width:64px;
+    height:19px;
+    display:block;
+    font-size:9px;
+    overflow:hidden;
+    text-indent:-200px;
+}
+footer#footer {
+    position:fixed;
+    bottom:1px;
+    width:100%;
+    text-align:center;
+    z-index:5;
+    height:23px;
+
+}
+footer#footer ul {
+    display:inline-block;
+    height:23px;
+    -moz-box-shadow: 0px 0px 4px #555;
+    -webkit-box-shadow: 0px 0px 4px #555;
+    box-shadow: 0px 0px 4px #555;
+}
+footer#footer ul li:first-child {
+    border-left:0 none;
+}
+footer#footer ul li {
+    float:left;
+    height:23px;
+}
+footer#footer .paginacao .btn {
+    float:left;
+    margin-top:6px;
+    padding:0px 5px 0px 5px;
+}
+footer#footer .paginacao .pagina {
+    font-size:11px;
+    margin-top:8px;
+    display:inline-block;
+    margin-left:5px;
+}
+footer#footer .paginacao .total {
+    font-size:11px;
+    margin-right:8px;
+}
+
+footer#footer .paginacao input {
+    height:13px;
+    font-size:11px;
+    width:129px;
+    border:1px solid #999999;
+    text-align:center;
+    margin:4px;
+}
+footer#footer .sair {
+    margin-left:7px;
+}
+footer#footer .sair .btn-sair {
+    float:left;
+    font-size:20px;
+    margin-top:4px;
+}
+footer#footer .paginacao .btn:hover, footer#footer .sair .btn-sair:hover {
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    filter:alpha(opacity=60);
+}
+footer#footer .sair .btn-sair i {
+    float:left;
+    margin-left:5px;
+}
+footer#footer .sair .btn-sair span {
+    float:left;
+    margin:4px 10px 0px 5px;
+    font-size:11px;
+}
+/*
+        MODAL
+*/
+.modal .btn-fechar i {
+    font-size:17px;
+}
+.modal .btn-fechar {
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.modal .padding {
+    position:relative;
+    z-index:10;
+    padding:20px 20px 20px 40px;
+}
+.modal {
+    display:none;
+    position:fixed;
+    top:40px;
+    left:0px;
+    width:50%;
+    height:100%;
+    z-index:10;
+}
+.modal-bg {
+    position:absolute;
+    z-index:1;
+    width:100%;
+    height:100%;
+}
+.btn-modal {
+    display:inline-block;
+    padding:2px 7px 3px 7px;
+    font-weight:400;
+    font-size:13px;
+    margin-right:10px;
+}
+/*
+        MODAL-ENQUETE
+*/
+#enquete .titulo {
+    font-weight:500;
+    font-size:18px;
+}
+#enquete .pergunta {
+    font-weight:500;
+    font-size:15px;
+    margin-top:18px;
+}
+#enquete ul {
+    margin:16px 0px 20px 0px;
+}
+#enquete li {
+    margin-bottom:5px;
+    font-size:14px;
+}
+#enquete li label {
+    padding-left:23px;
+    font-weight:200;
+}
+/*
+        MODAL-TODAS-EDICOES
+*/
+#todas-edicoes {
+    width:100%;
+}
+#todas-edicoes .padding {
+    padding-right:0px;
+    padding-bottom:0px;
+    height:125%;
+}
+#todas-edicoes .busca {
+    margin-top:28px;
+}
+#todas-edicoes .busca input {
+    font-size:13px;
+    padding:4px 5px 4px 5px;
+    border:0 none;
+    font-weight:600;
+    margin-top:8px;
+}
+#todas-edicoes .busca p {
+    float:left;
+    margin-right:10px;
+    font-size:14px;
+    font-weight:400;
+    height:30px;
+}
+#todas-edicoes .busca p.edicao {
+    width:110px;
+}
+#todas-edicoes .busca p.edicao input {
+    width:100px;
+}
+#todas-edicoes .busca p.data {
+    width:77px;
+}
+#todas-edicoes .busca p.data input {
+    width:67px;
+}
+#todas-edicoes .busca p.texto {
+    width:260px;
+}
+#todas-edicoes .busca p.texto input {
+    width:249px;
+}
+#todas-edicoes .busca p.botoes {
+    width:260px;
+    margin-top:26px;
+}
+#todas-edicoes .busca p.botoes .btn-modal {
+    padding:2px 16px 4px 16px;
+}
+#todas-edicoes .edicoes {
+    margin-top:28px;
+    height:60%;
+    overflow-y:auto;
+}
+#todas-edicoes .edicoes .edicao {
+    float:left;
+    margin-bottom:10px;
+    width:250px;
+    text-align:center;
+}
+#todas-edicoes .edicoes .edicao a {
+    text-align:center;
+}
+#todas-edicoes .edicoes .edicao .btn img {
+    border-width:2px;
+    border-style:solid;
+    margin-bottom:4px;
+}
+#todas-edicoes .edicoes .edicao .btn span {
+    font-size:14px;
+    font-weight:400;
+    text-align:center;
+    line-height:17px;
+}
+/*
+        MODAL INDICE
+*/
+#indice {
+    height:100%;
+}
+#indice .padding {
+    height:100%;
+}
+#indice .titulo {
+    font-weight:500;
+    font-size:18px;
+}
+#indice ul {
+    margin:27px 0px 20px 20px;
+}
+#indice li {
+    margin-bottom:8px;
+    font-size:14px;
+    text-align:left;
+}
+#indice li .btn {
+    display:block;
+    font-size:16px;
+    line-height:24px;
+    vertical-align:bottom;
+    text-align:left;
+}
+#indice li span {
+    display:inline-block;
+    width:24px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    vertical-align:middle;
+    margin-right:10px;
+    font-weight:700;
+}
+#indice ul li ul {
+    margin:-5px 0px 0px 48px;
+}
+#indice ul li ul li {
+    margin:0px;
+    font-size:10px;
+}
+#indice ul li ul li .btn {
+    font-size:15px;
+    height:20px;
+    font-weight:300;
+}
+#indice ul li ul li .btn strong {
+    font-weight:600;
+    margin-right:10px;
+}
+/*
+        MODAL PAGINAS
+*/
+#paginas {
+    width:100%;
+    height:100%;
+}
+#paginas.modal .btn-fechar {
+    top:-8px;
+}
+#paginas .padding {
+    padding:0px;
+    height:250px;
+}
+#paginas .titulo {
+    margin:20px 20px 20px 40px;
+    font-weight:500;
+    font-size:18px;
+}
+#paginas .edicoes {
+    margin:8px 0px 0px 40px;
+    height:400px;
+    float:left;
+}
+#paginas .edicoes .edicao {
+    float:left;
+    margin:0px 20px 22px 0px;
+}
+#paginas .edicoes .edicao.simples {
+    width:140px;
+}
+#paginas .edicoes .edicao.duplo {
+    width:auto;
+}
+#paginas .edicoes .edicao a {
+    float:left;
+    text-align:center;
+}
+#paginas .edicoes .edicao .btn img {
+    border-width:2px;
+    border-style:solid;
+    margin-bottom:3px;
+}
+#paginas .edicoes .edicao .btn img.primeira {
+    border-right:0 none;
+}
+#paginas .edicoes .edicao .btn img.segunda {
+    border-left:0 none;
+}
+#paginas .edicoes .edicao .btn span {
+    font-size:12px;
+    font-weight:300;
+    text-align:center;
+    line-height:17px;
+    vertical-align:top;
+    line-height:12px;
+}
+#paginas .edicoes .edicao .btn span.desc span {
+    display:inline-block;
+    width:94px;
+}
+/*
+        MODAL EXPORTAR
+*/
+#exportar {
+    width:100%;
+    height:100%;
+}
+#exportar.modal .btn-fechar {
+    top:-8px;
+}
+#exportar .padding {
+    padding:0px;
+    height:334px;
+}
+#exportar .titulo {
+    margin:20px 20px 20px 40px;
+    font-weight:500;
+    font-size:18px;
+}
+#exportar .pergunta {
+    font-weight:300;
+    font-size:15px;
+    margin:18px 0px 0px 40px;
+}
+#exportar .edicoes {
+    margin:8px 0px 0px 40px;
+    height:400px;
+    float:left;
+}
+#exportar .edicoes .edicao {
+    float:left;
+    margin:0px 20px 22px 0px;
+}
+#exportar .edicoes .edicao.simples {
+    width:97px;
+}
+#exportar .edicoes .edicao.simples input{
+    display:none;
+}
+#exportar .edicoes .edicao.duplo {
+    width:auto;
+}
+#exportar .edicoes .edicao.duplo .btn {
+    width:97px;
+}
+#exportar .edicoes .edicao.duplo .btn input{
+    display:none;
+}
+#exportar .edicoes .edicao .btn {
+    text-align:center;
+    position:relative;
+}
+#exportar .edicoes .edicao .btn img {
+    border-width:2px;
+    border-style:solid;
+    margin-bottom:3px;
+}
+#exportar .edicoes .edicao .btn img.primeira {
+    border-right:0 none;
+    max-width:120px;
+    max-height:129px;
+}
+#exportar .edicoes .edicao .btn img.segunda {
+    border-left:0 none;
+    max-width:120px;
+    max-height:129px;
+}
+#exportar .edicoes .edicao .btn span {
+    font-size:12px;
+    font-weight:300;
+    text-align:center;
+    line-height:17px;
+    vertical-align:top;
+    line-height:12px;
+}
+#exportar .edicoes .edicao .btn span.desc span {
+    display:inline-block;
+    width:94px;
+}
+#exportar .edicoes .edicao .btn i {
+    display:none;
+    position:absolute;
+    left:4px;
+    top:4px;
+    font-size:20px;
+}
+#exportar p.custom {
+    margin:15px 0px 0px 34px;
+}
+#exportar p.custom label {
+    margin:0px 20px 0px 5px;
+    padding-left:22px;
+    font-size:14px;
+}
+/*
+        MODAL PESQUISA
+*/
+#pesquisa {
+    width:50%;
+    height:100%;
+    left:auto;
+    right:0px;
+}
+#pesquisa .titulo {
+    margin:0px 0px 0px 0px;
+    font-weight:500;
+    font-size:18px;
+}
+#pesquisa .padding {
+    padding-right:0px;
+    padding-bottom:0px;
+    height:100%;
+}
+#pesquisa .busca {
+    margin-top:20px;
+}
+#pesquisa .pesquisar-por {
+    display:block;
+    font-size:14px;
+}
+#pesquisa .input-text {
+    display:block;
+}
+#pesquisa .input-text input {
+    font-size:13px;
+    padding:3px 5px 4px 5px;
+    border:0 none;
+    font-weight:600;
+    margin-top:8px;
+    width:314px;
+}
+#pesquisa .input-text .btn-modal {
+    margin-left:7px;
+    padding-left:15px;
+    padding-right:16px;
+}
+#pesquisa .custom {
+    margin:10px 0px 0px 0px;
+    font-size:14px;
+}
+#pesquisa .dica {
+    margin:10px 0px 0px 0px;
+    font-size:12px;
+    color:#CCCCCC;
+    font-weight:100;
+}
+#pesquisa .edicoes {
+    margin-top:30px;
+    height:500px;
+    overflow-y:auto;
+}
+#pesquisa .edicoes .edicao {
+    float:left;
+    margin:0px 0px 22px 0px;
+    font-size:12px;
+}
+#pesquisa .edicoes .edicao .esquerda {
+    float:left;
+    width:70px;
+}
+#pesquisa .edicoes .edicao .esquerda img {
+    border-width:2px;
+    border-style:solid;
+}
+#pesquisa .edicoes .edicao .direita {
+    float:left;
+    text-align:left;
+}
+#pesquisa .edicoes .edicao .direita .numero {
+    display:block;
+    width:325px;
+    margin:1px 0px 0px 11px;
+    font-size:13px;
+}
+#pesquisa .edicoes .edicao .direita .data {
+    display:block;
+    width:325px;
+    margin:3px 0px 0px 11px;
+    font-size:13px;
+}
+#pesquisa .edicoes .edicao .direita .texto {
+    display:block;
+    width:325px;
+    margin:10px 0px 0px 11px;
+    line-height:13px;
+}
+#comentar .edicoes {
+    margin-top:30px;
+    height:100%;
+}
+#comentar .edicoes .edicao {
+    float:left;
+    margin:0px 0px 22px 0px;
+    font-size:12px;
+}
+#comentar .edicoes .edicao .esquerda {
+    float:left;
+    width:70px;
+}
+#comentar .edicoes .edicao .esquerda img {
+    border-width:2px;
+    border-style:solid;
+}
+#comentar .edicoes .edicao .direita {
+    float:left;
+    width:350px;
+}
+#comentar .edicoes .edicao .direita .numero {
+    display:block;
+    width:325px;
+    margin:1px 0px 0px 11px;
+    font-size:13px;
+}
+#comentar .edicoes .edicao .direita .data {
+    display:block;
+    width:325px;
+    margin:3px 0px 0px 11px;
+    font-size:13px;
+}
+#comentar .edicoes .edicao .direita .texto {
+    display:block;
+    width:325px;
+    margin:10px 0px 0px 11px;
+    line-height:13px;
+}
+/*
+        MODAL-SHARE
+*/
+
+#share {
+    width:390px;
+    left:auto;
+    right:0px;
+}
+#share .titulo {
+    font-weight:500;
+    font-size:18px;
+}
+#share .padding {
+    padding-bottom:35px;
+}
+#share .share-this {
+    margin-top:15px;
+    margin-left:-5px;
+    width:300px;
+    height:56px;
+}
+#share .btn-exportar {
+    float:left;
+    font-size:14px;
+    vertical-align:middle;
+    margin:10px 15px 0px 0px;
+}
+#share .btn-exportar img {
+    border:0 none;
+    vertical-align:middle;
+    margin-right:4px;
+}
+/*
+        MODAL COMENTAR
+*/
+#comentar {
+    width:50%;
+    height:100%;
+    left:auto;
+    right:0px;
+}
+#comentar .titulo {
+    margin:0px 0px 0px 0px;
+    font-weight:500;
+    font-size:18px;
+}
+#comentar .pergunta {
+    font-weight:500;
+    font-size:15px;
+    margin-top:18px;
+}
+#comentar .padding {
+    padding-right:0px;
+    padding-bottom:0px;
+    height:100%;
+}
+#comentar .busca {
+    margin-top:20px;
+}
+#comentar .pesquisar-por {
+    display:block;
+    font-size:14px;
+}
+#comentar .input-text {
+    display:block;
+}
+#comentar .input-text input {
+    font-size:13px;
+    padding:3px 5px 4px 5px;
+    border:0 none;
+    font-weight:600;
+    margin-top:8px;
+    width:314px;
+}
+#comentar .input-text .btn-modal {
+    margin-left:7px;
+    padding-left:15px;
+    padding-right:16px;
+}
+#comentar .custom {
+    margin:10px 0px 0px 0px;
+    font-size:14px;
+}
+#comentar .dica {
+    margin:10px 0px 0px 0px;
+    font-size:12px;
+    color:#CCCCCC;
+    font-weight:100;
+}
+#comentar .edicao {
+    float:left;
+    margin:40px 0px 22px 0px;
+}
+#comentar .edicao.duplo {
+    width:400px;
+}
+#comentar .edicao.duplo .btn {
+    width:97px;
+    margin:0px 0px 0px 45px;
+}
+#comentar .edicao .btn {
+    float:left;
+    text-align:center;
+    position:relative;
+}
+#comentar .edicao .btn img {
+    border-width:2px;
+    border-style:solid;
+    margin-bottom:3px;
+}
+#comentar .edicao .btn img.primeira {
+    border-right:0 none;
+}
+#comentar .edicao .btn img.segunda {
+    border-left:0 none;
+}
+#comentar .edicao .btn span {
+    font-size:12px;
+    font-weight:300;
+    text-align:center;
+    line-height:17px;
+    vertical-align:top;
+    line-height:12px;
+}
+#comentar .edicao .btn span.desc span {
+    display:inline-block;
+    width:94px;
+}
+#comentar .edicao .btn i {
+    display:none;
+    position:absolute;
+    left:4px;
+    top:4px;
+    font-size:20px;
+}
+#comentar .comentario {
+    margin-top:7px;
+    width:410px;
+}
+#comentar .comentario input {
+    font-size:13px;
+    padding:4px 5px 4px 5px;
+    border:0 none;
+    font-weight:600;
+    margin-top:8px;
+}
+#comentar .comentario p {
+    float:left;
+    margin-right:10px;
+    font-size:14px;
+    font-weight:400;
+}
+#comentar .comentario p.linha {
+    width:400px;
+    margin-bottom:5px;
+}
+#comentar .comentario p.linha span {
+    display:block;
+}
+#comentar .comentario p.linha input {
+    width:400px;
+}
+#comentar .comentario p.linha textarea {
+    width:400px;
+    height:90px;
+    border:0px;
+    margin-top:8px;
+    padding:5px;
+}
+#comentar .comentario p.botoes {
+    width:260px;
+    margin-top:26px;
+}
+#comentar .comentario p.botoes .btn-modal {
+    padding:2px 16px 4px 16px;
+}
+#comentar .btn-modal {
+    float:left;
+    padding:5px 15px 5px 15px;
+    margin-top:6px;
+}
+#comentar .obrigatorios {
+    float:right;
+    color:#CCCCCC;
+    font-size:12px;
+    margin-top:10px;
+}
+/* Modal texto */
+/*
+        MODAL-SHARE
+*/
+
+#texto {
+    width:650px;
+    left:auto;
+    right:0px;
+}
+#texto .titulo {
+    font-weight:500;
+    font-size:18px;
+}
+#texto .padding {
+    padding-bottom:35px;
+}
+.btn{
+    padding:0px;
+}

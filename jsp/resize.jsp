@@ -1,0 +1,1 @@
+<% br.com.maven.flip.util.img.Resizer.resize(request,response); %>

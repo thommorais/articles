@@ -1,0 +1,98 @@
+fieldset.jcalendar {
+    font:.9em Verdana, sans-serif;
+    border:0px;
+}
+
+div.jcalendar-wrapper {
+
+}
+
+table{
+    border:0px;
+    border-color:white;
+}
+
+div.jcalendar table {    
+    color:#000;
+    margin:auto;    
+}
+
+div.jcalendar table th {
+    /*background:#eee;    *//
+    color:#999999;
+}
+
+div.jcalendar table td {
+    background:#f9f9f9;
+    padding:0;
+    width:2.2em;     
+}
+
+div.jcalendar table th.weekend {
+    /*background:#F7F7F0;*/
+    color:#999999;
+}
+div.jcalendar table th.weekday{
+    /*background:#FFFFFF;*/
+    color:#999999;
+}
+div.jcalendar table td.weekend {
+    background:#F7F7F0;
+border: 1px solid #D6D6D6;    
+}
+div.jcalendar table td.weekday {
+    background:#FFFFFF;
+border: 1px solid #D6D6D6;        
+}
+div.jcalendar table td a {
+    color:#333;
+    display:block;
+    line-height:1.7em;
+    text-align:center;
+    text-decoration:none;
+    width:2.2em;
+}
+
+div.jcalendar table td.today a {
+    background:#0C9145;
+    color:white;
+}
+
+div.jcalendar table td a:focus,div.jcalendar table td a:active {
+    background:#A19A7D;
+    color:#999999;
+    padding:0;
+}
+
+div.jcalendar table td a:hover {
+    background:#A19A7D;
+    color:white;
+    padding:0;
+}
+
+div.jcalendar-links {
+    margin:.1em;
+    text-align:center;
+}
+
+div.jcalendar-links a {
+    padding:.0em .4em;
+}
+.linkativo{    
+    cursor:hand;
+    cursor:pointer;
+    text-decoration: underline;
+}
+.linkinativo{
+    color:#999999;   
+    cursor:default;    
+    text-decoration:none;
+}
+.linkinativo:hover{
+    color:white;   
+}
+div.jcalendar table td a.selected {
+    background:#A19A7D;
+    text-decoration: underline;
+    color:white;
+}

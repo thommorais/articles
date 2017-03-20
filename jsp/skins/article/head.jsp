@@ -43,16 +43,19 @@
     {
       x: 250,
       y: 250,
+      page: 61938,
       text: 'Teste de note 1'
     },
     {
       x: 350,
       y: 350,
+      page: 61939,
       text: 'Domine habilidades que estão em alta. Construa e elabore projetos incríveis. Receba uma certificação valiosa. Inicie sua carreira em Ciência de Dados, Machine Learning, Android e mais. Seja requisitado.'
     },
     {
       x: 150,
       y: 150,
+      page: 61938,
       text: 'teste de outra nota'
     }
 

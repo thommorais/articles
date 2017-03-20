@@ -5,7 +5,7 @@ class Folder {
   constructor(el) {
 
     this.wrapper = document.querySelector('#folders')
-    this.modal = document.querySelector('.md-modal')
+    this.modal = document.querySelector('#new-favorite-folder')
     this.save  = this.modal.querySelector('#new-folder-form')
     this.input = this.modal.querySelector('#name-of-folder')
     this.close = this.modal.querySelector('.md-close')

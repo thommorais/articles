@@ -1,6 +1,17 @@
 #stOverlay {
-  z-index: initial !important;
+  top: 60px !important;
+  opacity: .95 !important;
+  z-index: 9 !important;
+  background-color: #262626 !important;
 }
+
+.titulo{
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #FFF;
+}
+
 select{
   color: #000 !important;
 }
@@ -9,9 +20,6 @@ select{
   display: none !important;
 }
 
-#todas-edicoes .busca{
-  margin-top: 0 !important;
-}
 
 #todas-edicoes .edicoes{
   height: auto !important

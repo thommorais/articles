@@ -994,8 +994,44 @@ function getPage(index) {
     return  pageArray[index - 1];
 }
 
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+
+    $('#btn-fullscreen').addClass('full');
+
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+
+    $('#btn-fullscreen').removeClass('full');
+
+
+  }
+}
+
 function openFullScreen() {
-  $('html').fullscreen();
+  // $('#btn-fullscreen').toggleClass('full');
+  // $('html').fullscreen();
+
+  toggleFullScreen()
 }
 
 function adjustMediaSize(pageElement) {

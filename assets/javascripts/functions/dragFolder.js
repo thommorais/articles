@@ -92,5 +92,3 @@ function load() {
     })
 
 }
-
-load()

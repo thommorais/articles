@@ -22,21 +22,30 @@ $(document).ready(function(){
 
 
     abrirTodasEdicoes = function(){
+
         if(MODAL_OPENED=='EDICOES'){
             fecharOutros();
+            $('body').removeClass('overlay-opened')
+
         }else{
+            fecharOutros();
             openEditionMode(0);
+            $('body').addClass('overlay-opened')
         }
     }
+
     fecharTodasEdicoes = function(){
         $('#todas-edicoes').fadeOut();
         $('#btn-todas-edicoes').removeClass('ativo');
+        $('body').removeClass('overlay-opened');
         MODAL_OPENED=null;
     }
 
     abrirIndice = function(){
         if(MODAL_OPENED=='INDICE'){
             fecharOutros();
+            $('body').removeClass('overlay-opened')
+
         }else{
             fecharOutros();
             var pageAnchor=getCurrentEdition();
@@ -48,11 +57,14 @@ $(document).ready(function(){
 
                 MODAL_OPENED='INDICE';
             });
+            $('body').addClass('overlay-opened');
+
         }
     }
     fecharIndice = function(){
         $('#indice').fadeOut();
         $('#btn-indice').removeClass('ativo');
+        $('body').removeClass('overlay-opened');
         MODAL_OPENED=null;
     }
 
@@ -64,6 +76,8 @@ $(document).ready(function(){
             ARTICLE_OPENED=true;
             $('#btn-artigos').addClass('ativo');
             $("body").css("overflow-y","auto");
+            // $('body').addClass('overlay-opened')
+
         }else{
             jQuery("#article-reader").hide();
             jQuery("#reader").show();
@@ -71,6 +85,8 @@ $(document).ready(function(){
             ARTICLE_OPENED=false;
             $('#btn-artigos').removeClass('ativo');
             $("body").css("overflow","hidden");
+            // $('body').removeClass('overlay-opened')
+
         }
     }
     abrirPaginas = function(){
@@ -88,11 +104,16 @@ $(document).ready(function(){
 
                 MODAL_OPENED='SUMARIO';
             });
+
+            $('body').addClass('overlay-opened')
+
         }
 
     }
+
     fecharPaginas = function(){
         $('#paginas').fadeOut();
+        $('body').removeClass('overlay-opened');
         $('#btn-paginas').removeClass('ativo');
         MODAL_OPENED=null;
     }
@@ -113,7 +134,7 @@ $(document).ready(function(){
 
         if(MODAL_OPENED=='EXPORTAR'){
             fecharOutros();
-        }else{        
+        }else{
             fecharOutros();
             var url=getPDFLink(todos);
             if(url != null){
@@ -206,6 +227,10 @@ $(document).ready(function(){
         fecharIndice();
         fecharTodasEdicoes();
         fecharEnquete();
+        $('body').removeClass('overlay-opened');
+
+        $('.overlay-content').fadeOut();
+
         MODAL_OPENED=null;
     }
 

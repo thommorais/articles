@@ -2,7 +2,7 @@
 
     var DomReady = window.DomReady = {};
 
-	// Everything that has to do with properly supporting our document ready event. Brought over from the most awesome jQuery. 
+	// Everything that has to do with properly supporting our document ready event. Brought over from the most awesome jQuery.
 
     var userAgent = navigator.userAgent.toLowerCase();
 
@@ -13,9 +13,9 @@
     	opera: /opera/.test(userAgent),
     	msie: (/msie/.test(userAgent)) && (!/opera/.test( userAgent )),
     	mozilla: (/mozilla/.test(userAgent)) && (!/(compatible|webkit)/.test(userAgent))
-    };    
+    };
 
-	var readyBound = false;	
+	var readyBound = false;
 	var isReady = false;
 	var readyList = [];
 
@@ -25,12 +25,12 @@
 		if(!isReady) {
 			// Remember that the DOM is ready
 			isReady = true;
-        
+
 	        if(readyList) {
 	            for(var fn = 0; fn < readyList.length; fn++) {
 	                readyList[fn].call(window, []);
 	            }
-            
+
 	            readyList = [];
 	        }
 		}
@@ -56,7 +56,7 @@
 		if(readyBound) {
 		    return;
 	    }
-	
+
 		readyBound = true;
 
 		// Mozilla, Opera (see further below for it) and webkit nightlies currently support this event
@@ -116,7 +116,7 @@
 					setTimeout( arguments.callee, 0 );
 					return;
 				}
-			
+
 				// and execute any waiting functions
 				domReady();
 			})();
@@ -130,7 +130,7 @@
 	DomReady.ready = function(fn, args) {
 		// Attach the listeners
 		bindReady();
-    
+
 		// If the DOM is already ready
 		if (isReady) {
 			// Execute the function immediately
@@ -140,14 +140,17 @@
 	        readyList.push( function() { return fn.call(window, []); } );
 	    }
 	};
-    
+
 	bindReady();
-	
+
 })();
-var body
+
+var body,
+    note
 
 DomReady.ready(function() {
-   body = document.querySelector('body');
+   body = document.querySelector('body')
+   note = new Note()
 });
 
 /*!
@@ -2677,8 +2680,6 @@ function load() {
 
 }
 
-load()
-
 
 class Folder {
 
@@ -2686,7 +2687,7 @@ class Folder {
   constructor(el) {
 
     this.wrapper = document.querySelector('#folders')
-    this.modal = document.querySelector('.md-modal')
+    this.modal = document.querySelector('#new-favorite-folder')
     this.save  = this.modal.querySelector('#new-folder-form')
     this.input = this.modal.querySelector('#name-of-folder')
     this.close = this.modal.querySelector('.md-close')
@@ -2729,9 +2730,126 @@ class Folder {
 
 }
 
-$(document).ready(function() {
-    $("#lightgallery").lightGallery();
-});
+function addtoFavorite(){
+
+  let ins = body.querySelector('.multimidia_textfield').value
+
+  console.info(ins)
+
+}
+
+class Note{
+
+  constructor(notes) {
+
+    this.main   = document.querySelector('#reader')
+    this.imgWrp = document.querySelector('#readercontainer .pagecontainer') || false
+    this.modal  = document.querySelector('#notes')
+    this.save   = this.modal.querySelector('#notes-form')
+    this.note   = this.modal.querySelector('#note')
+    this.close  = this.modal.querySelector('.md-close')
+    this.span   = ''
+    this.close.addEventListener( 'click', this.closer.bind(this))
+    this.save.addEventListener( 'submit', this._add.bind(this))
+  }
+
+  init(notes){
+
+    if(!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
+    notes.map( e => this.main.appendChild( this.template(e.text, e.x, e.y, 1) ) )
+  }
+
+  opner() {
+
+    this.modal.classList.add('md-show')
+    this.main.style.opacity = 0.3
+  }
+
+  closer() {
+
+    this.modal.classList.remove('md-show')
+    this.main.style.opacity = 1
+  }
+
+  showNote(e){
+
+    e.stopPropagation()
+
+    let text = e.target.dataset.text
+    let el   = document.createElement('div')
+    let inner = `<div>${text}</div>`
+
+    el.classList.add('note-element')
+    el.addEventListener('click', function(e){ e.stopPropagation() })
+    el.insertAdjacentHTML('beforeend',  inner)
+
+    e.target.appendChild(el)
+    e.target.style.opacity = 1
+  }
+
+  _add(e){
+
+    if(!this.imgWrp) this.imgWrp = document.querySelector('#readercontainer .pagecontainer')
+    if(this.note.value) this.main.appendChild(this.template(this.note.value, 150, 150, 1))
+    this.closer()
+
+    e.preventDefault()
+  }
+
+  handleDragStart(e){
+
+    e.target.style.opacity = 0.3
+    e.target.querySelector('.note-element').style.display = 'none'
+  }
+
+  handleDragEnd(e){
+
+
+    let l = 0 // this.imgWrp.getBoundingClientRect().left - 5
+    let t = 0 //this.imgWrp.getBoundingClientRect().top - 5
+
+    let x = e.pageX - l
+    let y = e.pageY - e.toElement.clientHeight
+
+    e.target.style.left = `${x - 5}px`
+    e.target.style.top = `${y - 5}px`
+    e.target.style.position = 'absolute'
+    e.target.style.opacity = 1
+
+    e.target.querySelector('.note-element').style.display = 'block'
+
+
+  }
+
+  template(value, x, y, o) {
+
+    this.span = document.createElement('span')
+    this.span.classList.add('note-added')
+    this.span.setAttribute('draggable', 'true')
+    this.span.setAttribute('data-text', value)
+    this.span.style.left = `${x}px`
+    this.span.style.top = `${y}px`
+    this.span.style.opacity = o
+
+    let el   = document.createElement('div')
+    let inner = `<div>${value}</div>`
+    el.classList.add('note-element')
+
+    el.insertAdjacentHTML('beforeend',  inner)
+    this.span.appendChild(el)
+    this.span.insertAdjacentHTML('beforeend',  `<i class="fa fa-sticky-note-o" aria-hidden="true"></i>`)
+
+    this.span.addEventListener('dragstart', this.handleDragStart.bind(this), false)
+    this.span.addEventListener('dragend', this.handleDragEnd.bind(this), false)
+
+    return this.span
+  }
+
+}
+
+function newNote(){
+  note.opner()
+}
 
 // Menu
 
@@ -2752,7 +2870,10 @@ $(document).ready(function() {
         ovrl.style.display = 'none'
       })
 
+      fecharOutros();
       body.classList.remove('overlay-opened')
+
+      console.warn('close')
 
     }
 
@@ -2761,15 +2882,16 @@ $(document).ready(function() {
       this.close()
 
       this.over = document.querySelector(`[data-overlay="${el.id}"]`)
+      body.classList.add('overlay-opened')
 
       if(this.over){
 
         this.over.style.display = 'block'
         this.over.querySelector('.close').addEventListener('click', this.close.bind(this))
-        body.classList.add('overlay-opened')
+
 
       }else{
-        console.info('A modal não existe')
+        console.warn('No Modal')
       }
 
     }
@@ -2779,7 +2901,9 @@ $(document).ready(function() {
 
  DomReady.ready(function() {
 
-  let btns = document.querySelectorAll('.new-menu')
+  $("#lightgallery").lightGallery();
+
+  let btns = document.querySelectorAll('.menu-item')
 
   for(let btn of btns){
     new Menu(btn)
@@ -2787,5 +2911,20 @@ $(document).ready(function() {
 
   let newFolder = document.querySelector('.new')
   new Folder(newFolder)
+
+  load()
+
+
+  let timer = setInterval( () => {
+
+    let dm = document.querySelector('#readercontainer .pagecontainer') || false
+
+    if(dm){
+      clearTimeout(timer)
+      note.init(notes)
+    }
+
+  }, 300)
+
 
 })

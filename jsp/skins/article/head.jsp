@@ -31,12 +31,36 @@
 <script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/reader-extensions.js"></script>
 <script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/reader-objects.js"></script>
 <script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/reader.js"></script>
-<script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/site.js"></script>
-<script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/magazine.js"></script>
+<script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/site.js?token=<%= token_hash %>"></script>
+<script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/magazine.js?token=<%= token_hash %>"></script>
 <script type="text/javascript" src="<%= baseweb %>flip/jornal/skins/article/js/tooltipster.bundle.min.js"></script>
 <script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/hammer.min.js"></script>
 <script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/jquery.hammer.js"></script>
-<script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/new-v.js"></script>
+
+<script>
+
+  var notes = [
+    {
+      x: 250,
+      y: 250,
+      text: 'Teste de note 1'
+    },
+    {
+      x: 350,
+      y: 350,
+      text: 'Domine habilidades que estão em alta. Construa e elabore projetos incríveis. Receba uma certificação valiosa. Inicie sua carreira em Ciência de Dados, Machine Learning, Android e mais. Seja requisitado.'
+    },
+    {
+      x: 150,
+      y: 150,
+      text: 'teste de outra nota'
+    }
+
+  ];
+
+</script>
+<script type="text/javascript"  src="<%= baseweb %>flip/jornal/skins/article/js/new-v.js?token=<%= token_hash %>"></script>
+
 
 <!--[if IE 7]>
     <link rel="stylesheet" href="<%= baseweb %>flip/jornal/skins/article/css/font-awesome-ie7.css">

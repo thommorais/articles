@@ -1,7 +1,6 @@
-
 .md-modal {
 	position: fixed;
-	top: 50%;
+	top: 90px;
 	left: 50%;
 	width: 50%;
 	max-width: 630px;
@@ -10,10 +9,8 @@
 	z-index: 2000;
 	visibility: hidden;
 	backface-visibility: hidden;
-	@include transform(translate(-50%, -50%));
+	@include transform(translate(-50%, 0));
 }
-
-
 /* Effect 1: Fade in and scale up */
 .md-effect-1 .md-content {
 	-webkit-transform: scale(0.7);
@@ -26,11 +23,12 @@
 	transition: all 0.3s;
 }
 
-
 .md-show {
 	visibility: visible;
+	margin-left: -0.1px;
 }
 
+#notes .md-content,
 .overlay-content .md-content {
 	position: relative;
 	color: $color-five;
@@ -38,7 +36,7 @@
 	border-radius: 3px;
 	margin: 0 auto;
 
-	.close{
+	.close {
 		top: 10px;
 		right: 10px;
 		height: 30px;
@@ -47,29 +45,59 @@
 		border-radius: 15px;
 		color: $color-five;
 
-		&:before{
+		&:before {
 			color: $color-five;
 			font-size: 1.9em;
 		}
 
-		&:hover{
+		&:hover {
 			background-color: $color-seven;
-			&:before{
+
+			&:before {
 				color: $color-two;
 			}
 		}
-
 	}
+}
 
+#notes .md-content {
+	min-width: 300px;
+	margin-left: 0.1px;
+
+	textarea {
+		display: block;
+		padding: 10px;
+		width: 100%;
+		max-width: 100%;
+		min-height: 120px;
+		font-size: em(15px);
+		color: $color-three;
+		outline: none;
+		border: 1px solid $color-five;
+	}
+}
+
+#notes .md-content {
+	.close {
+		position: absolute;
+
+		&:before {
+			font-family: 'lg';
+			color: $color-five;
+			font-size: em(32px);
+			cursor: pointer;
+			outline: none;
+			content: "\e070";
+		}
+	}
 }
 
 .md-content {
-
-	.field{
+	.field {
 		margin-bottom: 10px;
 	}
 
-	input{
+	input {
 		padding: 5px 10px;
 		width: 100%;
 		font-size: 0.8em;
@@ -77,33 +105,28 @@
 		border: 1px solid $color-five;
 	}
 
-	h3{
-		margin: 16px 0 31px 0;
+	h3 {
+		margin: 16px 0 31px;
+		color: $color-three;
 	}
 
-	button{
+	button {
 		border: none;
 		border-radius: 2px;
 		padding: 5px 15px;
 
-		&.save{
+		&.save {
 			background: $color-eight;
 			border: 1px solid $color-eight;
 			color: $color-two;
 			font-size: 15px;
 
-			&:hover{
+			&:hover {
 				background-color: transparent;
 				color: #0bcc6c;
-
 			}
-
 		}
-
 	}
-
-
-
 }
 
 .md-content > div {
@@ -122,11 +145,11 @@
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    top: 40px;
-    left: 0px;
-    width: 50%;
-    height: 100%;
-    z-index: 10;
+	display: none;
+	position: fixed;
+	top: 60px;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	z-index: 10;
 }

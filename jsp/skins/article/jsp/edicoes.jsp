@@ -3,10 +3,12 @@
 <%@ taglib uri="/WEB-INF/fmt" prefix="fmt" %>
 
 
-<a class="btn-fechar" href="javascript:void(0);" onClick="fecharTodasEdicoes()"><i class="fa fa-times" aria-hidden="true"></i></a>
+<%-- <a class="btn-fechar" href="javascript:void(0);" onClick="fecharTodasEdicoes()"><i class="fa fa-times" aria-hidden="true"></i></a> --%>
+<button type="button" class="close"  onClick="fecharTodasEdicoes()"></button>
 
-<p class="titulo">TODAS AS EDIÇÕES</p>
+<p class="titulo">Todas as Edições</p>
     <div class="viewport">
+
             <%
                 Integer PAGE_SIZE = 20;
                 boolean mostraFiltros = true;
@@ -62,7 +64,7 @@
                     pagina = 1;
                 }
                 if (mostraFiltros) {
-            %>                                           
+            %>
 
             <div class="busca">
                 <p class="col edicao"> <span><fmt:message key="site.pesquisa.nr"/></span>
@@ -79,20 +81,21 @@
                 </p>
                 <p class="botoes"> <a class="btn-modal" href="javascript:void(0);" onclick="openEditionMode(<%= pagina - 1%>)">Pesquisar</a> </p>
             </div>
-            <div class="clear"></div>            
-            
+
+            <div class="clear"></div>
+
                 <script type="text/javascript">
                     jQuery(document).ready(function(){
                         jQuery("#numero").ForceNumericOnly();
-                        jQuery('#dataInicial,#dataFinal').datepicker({ 
+                        jQuery('#dataInicial,#dataFinal').datepicker({
                             beforeShow: function() { lockdock=true; jQuery('#edicoes_barra ul').css("display","block"); jQuery('#ui-datepicker-div').maxZIndex(); },
                             onClose:function(){ lockdock=false; },
                             dateFormat : "dd/mm/yy",
-                            dayNamesArrayDefault:["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"],
+                            dayNamesArrayDefault:["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sï¿½bado"],
                             dayNamesMin:["Do", "Se", "Te", "Qu", "Qi", "Se", "Sa"],
                             monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
                             nextText: "Próximo",closeText:"Fechar",currentText:"Hoje",prevText:"Anterior"
-                        });                                         
+                        });
                     });
                 </script>
 
@@ -100,22 +103,22 @@
                 <%          }
                     for (br.com.maven.flip.javasql.view.EdicaoBean bean : list) {
                 %>
-                <p class="edicao">             
+                <p class="edicao">
                     <a class="btn" href="#">
 
                         <% if (bean.isDisabled()) {%>
-                        <a href="javascript:alert('Você não tem acesso a essa edição');"><img src="<%= base + bean.getPath()%>" border="1"  title="<fmt:message key="site.cliqueler"/>" class="edicaothumb imgdisabled"/></a>
+                        <a href="javascript:alert('Vocï¿½ nï¿½o tem acesso a essa ediï¿½ï¿½o');"><img src="<%= base + bean.getPath()%>" border="1"  title="<fmt:message key="site.cliqueler"/>" class="edicaothumb imgdisabled"/></a>
                             <%} else {%>
                         <a href="<%= base + link%>?numero=<%= bean.getNr()%><%=tx != null && tx != "" ? "&keywords=" + tx : ""%>"><img src="<%= base + bean.getPath()%>"  border="1" title="<fmt:message key='site.cliqueler'/>" class='edicaothumb'/></a>
                             <% }%>
                         <br/>
-                        <span>   
+                        <span>
                             <%if (bean.getNome() != null && bean.getNome().length() > 0) {%>
                             <%= bean.getNome()%>
                             <%} else {%>
                             <% if (bean.getDataFormatada() != null) {%>
                             <c:choose>
-                                <c:when test="${sessionScope['javax.servlet.jsp.jstl.fmt.locale.session'] eq 'es_ES_Spain'}">                    
+                                <c:when test="${sessionScope['javax.servlet.jsp.jstl.fmt.locale.session'] eq 'es_ES_Spain'}">
                                     <%= bean.getDataFormatadaES()%>
                                 </c:when>
                                 <c:otherwise>
@@ -125,7 +128,7 @@
                             <% }%>
                             <br/><%= bean.getNr()%>
                             <% }%>
-                        </span>            
+                        </span>
                     </a>
                 </p>
 
@@ -143,4 +146,4 @@
                     }
                 %>
             </div>
-    </div>      
+    </div>

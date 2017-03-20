@@ -22,7 +22,12 @@
 
 }
 
-.overlay-content{
+#content{
+  @include transition(opacity .2s linear);
+}
+
+.overlay-content,
+.modal-texto{
   position: fixed;
   display: none;
   top: 60px;
@@ -42,25 +47,32 @@
     color: $color-two;
   }
 
-
-  .close{
-    position: absolute;
-    z-index: 999;
-    top: 30px;
-    right: 30px;
-    background: transparent;
-    border: 0;
-
-
-    &:before{
-      font-family: 'lg';
-      color: $color-two;
-      font-size: em(32px);
-      cursor: pointer;
-      outline: none;
-      content: "\e070";
+  .padding{
+    .close{
+      top: 0;
+      right: 0;
     }
+  }
 
+}
+
+
+.close{
+  position: absolute;
+  z-index: 999;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: 0;
+
+
+  &:before{
+    font-family: 'lg';
+    color: $color-two;
+    font-size: em(32px);
+    cursor: pointer;
+    outline: none;
+    content: "\e070";
   }
 
 }

@@ -27,6 +27,9 @@ var gulp   = require('gulp'),
 
       'assets/javascripts/functions/dragFolder.js',
       'assets/javascripts/functions/newFolder.js',
+      'assets/javascripts/functions/favorites.js',
+      'assets/javascripts/functions/notes.js',
+      'assets/javascripts/functions/menu.js',
       'assets/javascripts/functions/main.js'
 
 

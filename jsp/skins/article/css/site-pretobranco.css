@@ -5,10 +5,10 @@
 .enquete.bg-geral {
 	background:#FFFF33;
 }
-#footer .bg-geral {
+/*#footer .bg-geral {
 	background:#FFFFFF;
 	border-bottom:1px solid #C5C5C5;
-}
+}*/
 .cor-texto, a.btn {
 	color:#000066;
 }
@@ -22,18 +22,11 @@ a.btn.ativo {
 /*
 	FOOTER
 */
-#footer .bg-geral {
-	background:#fff;
-}
+
 footer#footer .paginacao .total {
 	color:#000066;
 }
-footer#footer ul li {
-	border-left:1px solid #ccc;
-}
-footer#footer ul {
-	border-top:0 none;
-}
+
 .cor-texto, a.btn {
 	color:#000066;
 }
@@ -45,7 +38,7 @@ a.btn.ativo {
 	color:#999;
 }
 /*
-	HEDER ENQUETE	
+	HEDER ENQUETE
 */
 /* não selecionado */
 header#header .icones-esquerda .enquete, header#header .icones-esquerda .enquete a {

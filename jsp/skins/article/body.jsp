@@ -78,25 +78,20 @@
 <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.exibeEdicoes && DEMO ne 'S'}">
     <div id="todas-edicoes" class="modal modal-texto">
         <div class="modal-bg"></div>
-        <div class="padding" id="edicoescontent">
-
-        </div>
+        <div class="padding" id="edicoescontent"></div>
     </div>
 </c:if>
 <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.exibeIndice}">
-    <div id="indice" class="modal modal-texto" title="ï¿½ndice">
+    <div id="indice" class="modal modal-texto" title="Índice">
         <div class="modal-bg"></div>
-        <div class="padding" id="indicecontent">
-
-        </div>
+        <div class="padding" id="indicecontent"></div>
     </div>
 </c:if>
 
 <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.exibeSumario}">
-    <div id="paginas" class="modal modal-texto" title="Sumï¿½rio">
+    <div id="paginas" class="modal modal-texto" title="Sumário">
         <div class="modal-bg"></div>
-        <div class="padding" id="paginascontent">
-        </div>
+        <div class="padding" id="paginascontent"></div>
     </div>
 </c:if>
 
@@ -116,7 +111,6 @@
 </c:if>
 <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.modoTexto}">
     <div id="texto" class="modal modal-texto textocontent" style="display:none;">
-
     </div>
 </c:if>
 <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.comentarios}">
@@ -139,9 +133,7 @@
         <div id="header-line-1">
             <div class="icones-esquerda">
                 <ul>
-                    <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.exibeEdicoes && DEMO ne 'S'}">
-                        <li><a id="btn-todas-edicoes" href="javascript:void(0);" onClick="abrirTodasEdicoes()" title="<fmt:message key='site.outras'/>"><i aria-hidden="true" class="fa fa-book"></i></a></li>
-                    </c:if>
+
                     <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.exibeEdicoes && DEMO ne 'S'}">
                         <li><a id="btn-todas-edicoes" href="javascript:void(0);" onClick="abrirTodasEdicoes()" title="<fmt:message key='site.outras'/>"><i aria-hidden="true" class="fa fa-book"></i></a></li>
                     </c:if>
@@ -152,11 +144,11 @@
                         <li><a title="<fmt:message key='site.sumario'/>"  id="btn-paginas" href="javascript:void(0);" onClick="abrirPaginas()"><i aria-hidden="true" class="fa fa-th-large"></i></a></li>
                     </c:if>
                     <c:if test="${!empty page.articles}">
-                        <li><a title="Artigos desta ediï¿½ï¿½o"  id="btn-artigos" href="javascript:void(0);" onClick="abrirArtigos()"><i aria-hidden="true" class="fa fa-newspaper-o"></i></a></li>
+                        <li><a title="Artigos desta edição" id="btn-artigos" href="javascript:void(0);" onClick="abrirArtigos()"><i aria-hidden="true" class="fa fa-newspaper-o"></i></a></li>
                     </c:if>
 
-                    <li><a title="Multimidia" class="new-menu" id="mdl-multimidia" href="javascript:void(0);"><i class="fa fa-film" aria-hidden="true"></i></a></li>
-                    <li><a title="Meus Favoritos" class="btn new-menu" id="mdl-favoritos" href="javascript:void(0);" ><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                    <li><a title="Multimidia" id="mdl-multimidia" href="javascript:void(0);" class="menu-item new-menu"><i class="fa fa-film" aria-hidden="true"></i></a></li>
+                    <li><a title="Meus Favoritos" id="mdl-favoritos" href="javascript:void(0);" class="menu-item new-menu" ><i class="fa fa-star" aria-hidden="true"></i></a></li>
 
                 </ul>
                 <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.publicaEnquete}">
@@ -184,7 +176,7 @@
                     <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.contadorVisitas && page.visitas > 0}">
                         <li class="views cor-disabled" title="<fmt:message key='site.visitas'/>"><a href="javascript:void(0)"><span><c:out value="${page.visitas}"/></span><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                     </c:if>
-                    <li><a id="btn-fullscreen" href="javascript:void(0);" title="Fullscreen" onclick="openFullScreen();"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a></li>
+                    <%-- <li><a id="btn-fullscreen" href="javascript:void(0);" title="Fullscreen" onclick="openFullScreen();"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a></li> --%>
                     <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.pesquisa}">
                         <li><a id="btn-pesquisa" href="javascript:void(0);" title="<fmt:message key='site.procurar'/>" onclick="abrirPesquisa();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                     </c:if>
@@ -230,7 +222,7 @@
         <article id="interna">
 
             <div id="searchinstant" style="display:none">
-                Pesquisa instantï¿½nea habilitada! Para procurar por vï¿½rias palavras separe-as com vï¿½rgula.
+                Pesquisa instantânea habilitada! Para procurar por várias palavras separe-as com vírgula.
                 <input type="text" name="keywordbody" id="keywordbody" class="CampoTexto"/>
                 <input type="button" value="Pesquisar" class="BotaoBranco" onclick="atualizaPesquisa();"/>
                 <input type="button" value="Cancelar" class="BotaoBranco" onclick="cancelaPesquisa();"/>
@@ -240,7 +232,7 @@
 
                 <!-- overlay -->
                 <div id="readerloading">
-                    <i class="fa fa-spinner" aria-hidden="true"" aria-hidden="true"></i>
+                    <i class="fa fa-spinner" aria-hidden="true" aria-hidden="true"></i>
                 </div>
 
                 <!-- leitor -->
@@ -265,10 +257,10 @@
                 </div>
                 <!-- area de setas -->
                 <div id="readerarrows">
-                    <div class="arrow-navigate arrow-navigate-left previous-button" title="Pï¿½gina anterior">
+                    <div class="arrow-navigate arrow-navigate-left previous-button" title="P?gina anterior">
                         <i class="fa fa-arrow-left" aria-hidden="true" aria-hidden="true"></i>
                     </div>
-                    <div class="arrow-navigate arrow-navigate-right next-button" title="Prï¿½xima pï¿½gina">
+                    <div class="arrow-navigate arrow-navigate-right next-button" title="Próxima página">
                         <i class="fa fa-arrow-right" aria-hidden="true" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -298,7 +290,7 @@
                     <h2><c:out value="${article.chamada}"/></h2>
                     <p>
                         <c:out value="${article.textoResumo}" escapeXml="false"/><br/>
-                        <a href="javascript:abreArtigo('<c:out value='${article.cd}'/>');" class="btn btn-block btn-primary btn-primary leiamais columnbreak">Leia essa matï¿½ria <span class="glyphicon glyphicon-arrow-right"></span></a>
+                        <a href="javascript:abreArtigo('<c:out value='${article.cd}'/>');" class="btn btn-block btn-primary btn-primary leiamais columnbreak">Leia essa mat?ria <span class="glyphicon glyphicon-arrow-right"></span></a>
                     </p>
                     </c:forEach>
                  </div>
@@ -357,29 +349,47 @@
 
 
     <footer id="footer">
-        <ul class="paginacao bg-geral">
-            <li><a class="btn duplo multimidia_fr" href="#"><i class="primeiro fa fa-chevron-left" aria-hidden="true"></i><i class="segundo fa fa-chevron-left" aria-hidden="true"></i></a></li>
-            <li><a class="btn multimidia_prev" href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
-            <li>
-                <input type="text" name="" id="" value="1" maxlength="5" class="multimidia_textfield" />
-            </li>
-            <li><a class="btn multimidia_next" href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-            <li><a class="btn duplo multimidia_ff" href="#"><i class="primeiro fa fa-chevron-right" aria-hidden="true"></i><i class="segundo fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        </ul>
-        <c:if test="${!empty logado && logado eq 'true' && !empty username && username ne 'DEMO'}">
-            <ul class="sair bg-geral">
-                <li>
-                <c:choose>
-                    <c:when test="${!empty sessionScope['backlink']}">
-                        <a class="btn btn-sair" href="<%= base%><c:out value='${backlink}'/>"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="sair"><fmt:message key="site.logout"/></span></a>
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn-sair" href="<%=base%>flip/jornal/logout.jsp?user=<c:out value='${username}'/>&ref=<%= base%><c:out value="${edicao_dia}"/>login.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="sair"><fmt:message key="site.logout"/></span></a>
-                    </c:otherwise>
-                </c:choose>
-                </li>
-            </ul>
-        </c:if>
+
+        <nav>
+          <ul class="paginacao bg-geral">
+              <li><a class="btn duplo multimidia_fr" href="#"><i class="primeiro fa fa-chevron-left" aria-hidden="true"></i><i class="segundo fa fa-chevron-left" aria-hidden="true"></i></a></li>
+              <li><a class="btn multimidia_prev" href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+              <li>
+                  <input type="text" name="" id="" value="1" maxlength="5" class="multimidia_textfield" />
+              </li>
+              <li><a class="btn multimidia_next" href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a class="btn duplo multimidia_ff" href="#"><i class="primeiro fa fa-chevron-right" aria-hidden="true"></i><i class="segundo fa fa-chevron-right" aria-hidden="true"></i></a></li>
+          </ul>
+
+          <button type="button" onclick="addtoFavorite();">
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </button>
+
+          <button type="button" onclick="newNote();">
+            <i class="fa fa-sticky-note" aria-hidden="true"></i>
+          </button>
+
+          <a id="btn-fullscreen" class="fullscreen" href="javascript:void(0);" title="Fullscreen" onclick="openFullScreen();">
+            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+          </a>
+
+          <c:if test="${!empty logado && logado eq 'true' && !empty username && username ne 'DEMO'}">
+              <ul class="sair bg-geral">
+                  <li>
+                  <c:choose>
+                      <c:when test="${!empty sessionScope['backlink']}">
+                          <a class="btn btn-sair" href="<%= base%><c:out value='${backlink}'/>"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="sair"><fmt:message key="site.logout"/></span></a>
+                      </c:when>
+                      <c:otherwise>
+                          <a class="btn btn-sair" href="<%=base%>flip/jornal/logout.jsp?user=<c:out value='${username}'/>&ref=<%= base%><c:out value="${edicao_dia}"/>login.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="sair"><fmt:message key="site.logout"/></span></a>
+                      </c:otherwise>
+                  </c:choose>
+                  </li>
+              </ul>
+          </c:if>
+
+        </nav>
+
         <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.logomaven}">
             <a href="http://www.maven.com.br/#produtos" target="_blank" class="logo-maven" alt="<fmt:message key='site.conheca'/>" title="<fmt:message key='site.conheca'/>"></a>
         </c:if>
@@ -422,7 +432,7 @@
 
       </div>
 
-      <div class="md-modal md-effect-1">
+      <div class="md-modal md-effect-1" id="new-favorite-folder">
 
         <div class="md-content">
           <div>
@@ -442,14 +452,12 @@
         </div>
 
       </div>
-
-
     </section>
 
     <section data-overlay="mdl-multimidia" class="multimidia overlay-content ">
 
       <header>
-        <h2>MultimÃ­dia</h2>
+        <h2>Multimídia</h2>
         <span>Filtrar por:
           <select>
             <option value="">Video</option>
@@ -465,24 +473,44 @@
         <a href="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5Njk1Mjc5N15BMl5BanBnXkFtZTgwNDQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg" class="multimidia-item">
           <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5Njk1Mjc5N15BMl5BanBnXkFtZTgwNDQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg"></figure>
           <h3>Whiplash</h3>
-          <h4>2014 â€” 	Andrew</h4>
+          <h4>2014 - Andrew</h4>
         </a>
 
         <a href="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE2NTQ4NTY0MF5BMl5BanBnXkFtZTgwMDQ0NzQ5MTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg" class="multimidia-item">
           <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE2NTQ4NTY0MF5BMl5BanBnXkFtZTgwMDQ0NzQ5MTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"></figure>
           <h3>Whiplash</h3>
-          <h4>2014 â€” 	Andrew</h4>
+          <h4>2014 - Andrew</h4>
         </a>
 
         <a href="https://www.youtube.com/watch?v=meBbDqAXago"  class="multimidia-item video">
           <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY3NjMxNzQ0Ml5BMl5BanBnXkFtZTgwNzQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg"></figure>
           <h3>Whiplash</h3>
-          <h4>2014 â€” 	Andrew</h4>
+          <h4>2014 - Andrew</h4>
         </a>
 
       </div>
-
     </section>
+
+    <div class="md-modal md-effect-1" id="notes">
+
+      <div class="md-content">
+        <div>
+          <h3>Nova Nota</h3>
+
+          <form id="notes-form">
+
+            <div class="field">
+              <textarea type="text" id="note" placeholder="Nota" /></textarea>
+            </div>
+
+            <button type="submit" class="save">salvar</button>
+          </form>
+
+          <button class="md-close close"></button>
+        </div>
+      </div>
+
+    </div>
 
 
 </div>

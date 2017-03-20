@@ -2,8 +2,9 @@
 <%@ taglib uri="/WEB-INF/c" prefix="c" %>
 <%@ taglib uri="/WEB-INF/fmt" prefix="fmt" %>
 
-<a class="btn-fechar" href="javascript:void(0);" onClick="fecharIndice()"><i class="fa fa-times" aria-hidden="true"></i></a>
-<p class="titulo">ÍNDICE</p>
+<button type="button" class="close"  onClick="fecharIndice()"></button>
+
+<p class="titulo">Índice</p>
 <ul>
     <%
         String edicaoId = request.getParameter("idForm");
@@ -24,7 +25,7 @@
                 <c:otherwise>
                     <%= bean.getNome()%>
                 </c:otherwise>
-            </c:choose>        
+            </c:choose>
         </a>
     </li>
     <%
@@ -46,7 +47,7 @@
                         <c:otherwise>
                             <%= child.getNome()%>
                         </c:otherwise>
-                    </c:choose>        
+                    </c:choose>
                 </a>
             </li>
             <%

@@ -3,9 +3,11 @@
   class Menu {
 
     constructor(btn){
+
       this.btn   = btn
       this.over  = ''
-      this.overlay = document.querySelectorAll('.overlay-content')
+      this.overlay = body.querySelectorAll('.overlay-content')
+      this.Allbtn = body.querySelectorAll('#header li a')
 
       this.btn.addEventListener('click', () => this.openOverlay(this.btn) )
 
@@ -17,10 +19,13 @@
         ovrl.style.display = 'none'
       })
 
-      fecharOutros();
+      Array.prototype.forEach.call(this.Allbtn, function(btn) {
+        btn.classList.remove('ativo')
+      })
+
       body.classList.remove('overlay-opened')
 
-      console.warn('close')
+      fecharOutros()
 
     }
 
@@ -28,7 +33,9 @@
 
       this.close()
 
-      this.over = document.querySelector(`[data-overlay="${el.id}"]`)
+      this.btn.classList.add('ativo')
+
+      this.over = body.querySelector(`[data-overlay="${el.id}"]`)
       body.classList.add('overlay-opened')
 
       if(this.over){
@@ -38,7 +45,9 @@
 
 
       }else{
-        console.warn('No Modal')
+
+         throw new Error(`there is no ${el.id}`)
+
       }
 
     }

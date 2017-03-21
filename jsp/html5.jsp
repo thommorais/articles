@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <script src='//code.jquery.com/jquery-3.1.0.min.js'></script>
         <script src='//code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
-        
+
 
 
 
@@ -27,12 +27,12 @@
         <meta name="twitter:title" content="<c:out value='${page.nome}'/>" >
         <meta name="twitter:description" content="<c:out value='${page.sobre}'/>" >
         <meta name="twitter:image" content='<%= base%><c:out value="${page.img}"/>'>
-        
+
 
 <script type='text/javascript'>
             var doc_x = '<c:out value="${paginaWidth}"/>';
             var doc_y = '<c:out value="${paginaHeight}"/>';
-            var base = '<%= base%>';   
+            var base = '<%= base%>';
     var index = 0, indexmedia = 0, indexpic = 0, indextemplinks = 0;
     var pageslist = new Array();
     var pfmedias = new Array();
@@ -76,7 +76,7 @@
             </c:forEach></c:if>
 
     </c:forEach>
-</script>         
+</script>
 <link rel="stylesheet" href="<%= base %>flip/jornal/skins/mobileNovo/css/style.css">
 <script type="text/javascript" src="<%= base%>flip/jornal/js/html5lightbox.js"></script>
 <script type="text/javascript" src="<%= base%>flip/jornal/plugin/videoBox<fmt:message key='site.idioma'/>.js"></script>
@@ -93,7 +93,7 @@
         <ul id="thelist">
             <c:forEach var="pag" items="${paginaslist}" varStatus="i">
                 <li id="pag<c:out value='${i.index}'/>" class="anch<c:out value='${pag.id}'/>">
-                    <span id="empty" class="loadimg"></span>                   
+                    <span id="empty" class="loadimg"></span>
                 </li>
             </c:forEach>
         </ul>

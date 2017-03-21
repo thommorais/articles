@@ -14,17 +14,8 @@
 
   load()
 
+  note.init(notes)
 
-  let timer = setInterval( () => {
-
-    let dm = document.querySelector('#readercontainer .pagecontainer') || false
-
-    if(dm){
-      clearTimeout(timer)
-      note.init(notes)
-    }
-
-  }, 300)
-
-
+  let d  = document.querySelector('#reader')
+  console.log(d)
 })

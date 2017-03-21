@@ -2738,13 +2738,12 @@ function addtoFavorite(){
 
 }
 
-class Note{
+ class Note{
 
   constructor(notes) {
-
-    this.main   = document.querySelector('#content')
-    this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer') || false
-    this.modal  = document.querySelector('#notes')
+    this.main   = body.querySelector('#reader')
+    this.imgWrp = this.main.querySelector('#readercontainer') || false
+    this.modal  = body.querySelector('#notes')
     this.save   = this.modal.querySelector('#notes-form')
     this.note   = this.modal.querySelector('#note')
     this.close  = this.modal.querySelector('.md-close')
@@ -2762,7 +2761,7 @@ class Note{
   opner() {
 
     this.modal.classList.add('md-show')
-    this.main.style.opacity = 0.1
+    this.main.style.opacity = 0.3
   }
 
   closer() {
@@ -2784,6 +2783,7 @@ class Note{
     el.insertAdjacentHTML('beforeend',  inner)
 
     e.target.appendChild(el)
+    e.target.style.opacity = 1
   }
 
   _add(e){
@@ -2791,11 +2791,13 @@ class Note{
 
     if(!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
     if(this.note.value) this.imgWrp.appendChild(this.template(this.note.value, 15, 15, 1))
+
     this.closer()
   }
 
   handleDragStart(e){
 
+    e.target.style.opacity = 0.3
     e.target.querySelector('.note-element').style.display = 'none'
   }
 
@@ -2811,6 +2813,7 @@ class Note{
     e.target.style.left = `${x}px`
     e.target.style.top = `${y}px`
     e.target.style.position = 'absolute'
+    e.target.style.opacity = 1
 
     e.target.querySelector('.note-element').style.display = 'block'
 
@@ -2837,7 +2840,7 @@ class Note{
 
     this.span.addEventListener('dragstart', this.handleDragStart.bind(this), false)
     this.span.addEventListener('dragend', this.handleDragEnd.bind(this), false)
-
+    console.log(this.span)
     return this.span
   }
 
@@ -2852,9 +2855,11 @@ function newNote(){
   class Menu {
 
     constructor(btn){
+
       this.btn   = btn
       this.over  = ''
-      this.overlay = document.querySelectorAll('.overlay-content')
+      this.overlay = body.querySelectorAll('.overlay-content')
+      this.Allbtn = body.querySelectorAll('#header li a')
 
       this.btn.addEventListener('click', () => this.openOverlay(this.btn) )
 
@@ -2866,10 +2871,13 @@ function newNote(){
         ovrl.style.display = 'none'
       })
 
-      fecharOutros();
+      Array.prototype.forEach.call(this.Allbtn, function(btn) {
+        btn.classList.remove('ativo')
+      })
+
       body.classList.remove('overlay-opened')
 
-      console.warn('close')
+      fecharOutros()
 
     }
 
@@ -2877,7 +2885,9 @@ function newNote(){
 
       this.close()
 
-      this.over = document.querySelector(`[data-overlay="${el.id}"]`)
+      this.btn.classList.add('ativo')
+
+      this.over = body.querySelector(`[data-overlay="${el.id}"]`)
       body.classList.add('overlay-opened')
 
       if(this.over){
@@ -2887,7 +2897,9 @@ function newNote(){
 
 
       }else{
-        console.warn('No Modal')
+
+         throw new Error(`there is no ${el.id}`)
+
       }
 
     }
@@ -2910,17 +2922,8 @@ function newNote(){
 
   load()
 
+  note.init(notes)
 
-  let timer = setInterval( () => {
-
-    let dm = document.querySelector('#readercontainer .pagecontainer') || false
-
-    if(dm){
-      clearTimeout(timer)
-      note.init(notes)
-    }
-
-  }, 300)
-
-
+  let d  = document.querySelector('#reader')
+  console.log(d)
 })

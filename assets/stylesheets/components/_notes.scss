@@ -21,7 +21,9 @@
 	}
 
 	&:hover{
-
+		cursor: move;
+		z-index: 99999;
+		
 		.note-element{
 			display: block;
 			opacity: 1;

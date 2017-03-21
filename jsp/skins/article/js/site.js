@@ -1,7 +1,10 @@
 var MODAL_OPENED=null;
 var ARTICLE_OPENED=false;
 var searchResult=null;
+
 $(document).ready(function(){
+
+    var bodyV = $('body')
 
 
     abrirEnquete = function(){
@@ -25,29 +28,30 @@ $(document).ready(function(){
 
         if(MODAL_OPENED=='EDICOES'){
             fecharOutros();
-            $('body').removeClass('overlay-opened')
+            bodyV.removeClass('overlay-opened')
 
         }else{
             fecharOutros();
+            bodyV.addClass('overlay-opened')
             openEditionMode(0);
-            $('body').addClass('overlay-opened')
         }
     }
 
     fecharTodasEdicoes = function(){
         $('#todas-edicoes').fadeOut();
         $('#btn-todas-edicoes').removeClass('ativo');
-        $('body').removeClass('overlay-opened');
+        bodyV.removeClass('overlay-opened');
         MODAL_OPENED=null;
     }
 
     abrirIndice = function(){
         if(MODAL_OPENED=='INDICE'){
             fecharOutros();
-            $('body').removeClass('overlay-opened')
+            bodyV.removeClass('overlay-opened')
 
         }else{
             fecharOutros();
+            bodyV.addClass('overlay-opened');
             var pageAnchor=getCurrentEdition();
             var url=getPagesLink('indice')+'?idForm='+pageAnchor;
             jQuery.post(url,function(data){
@@ -57,14 +61,13 @@ $(document).ready(function(){
 
                 MODAL_OPENED='INDICE';
             });
-            $('body').addClass('overlay-opened');
 
         }
     }
     fecharIndice = function(){
         $('#indice').fadeOut();
         $('#btn-indice').removeClass('ativo');
-        $('body').removeClass('overlay-opened');
+        bodyV.removeClass('overlay-opened');
         MODAL_OPENED=null;
     }
 
@@ -85,7 +88,7 @@ $(document).ready(function(){
             ARTICLE_OPENED=false;
             $('#btn-artigos').removeClass('ativo');
             $("body").css("overflow","hidden");
-            // $('body').removeClass('overlay-opened')
+            // bodyV.removeClass('overlay-opened')
 
         }
     }
@@ -95,6 +98,7 @@ $(document).ready(function(){
             fecharOutros();
         }else{
             fecharOutros();
+            bodyV.addClass('overlay-opened')
             var pageAnchor=getCurrentEdition();
             var url=getPagesLink('paginas')+'?idForm='+pageAnchor;
             jQuery.post(url,function(data){
@@ -105,7 +109,7 @@ $(document).ready(function(){
                 MODAL_OPENED='SUMARIO';
             });
 
-            $('body').addClass('overlay-opened')
+
 
         }
 
@@ -113,13 +117,14 @@ $(document).ready(function(){
 
     fecharPaginas = function(){
         $('#paginas').fadeOut();
-        $('body').removeClass('overlay-opened');
+        bodyV.removeClass('overlay-opened');
         $('#btn-paginas').removeClass('ativo');
         MODAL_OPENED=null;
     }
 
     abrirShare = function(){
         fecharOutros();
+        bodyV.addClass('overlay-opened')
         $('#share').fadeIn();
         $('#btn-exportar').addClass('ativo');
 
@@ -128,6 +133,8 @@ $(document).ready(function(){
         $('#share').fadeOut();
         $('#btn-exportar').removeClass('ativo');
         MODAL_OPENED=null;
+        bodyV.removeClass('overlay-opened')
+
     }
 
     abrirExportar = function(todos){
@@ -155,13 +162,17 @@ $(document).ready(function(){
     }
 
     abrirPesquisa = function(){
+
         if(MODAL_OPENED=='PESQUISA'){
             fecharOutros();
         }else{
+
             fecharOutros();
+            bodyV.addClass('overlay-opened');
             var pageAnchor=getCurrentEdition();
             var url=getPagesLink('pesquisa')+'?idForm='+pageAnchor+'&acervo='+acervo;
             url=url+'&linkedicao='+linkedicao;
+
             jQuery.post(url,function(data){
                 jQuery('.pesquisacontent').html(data);
                 $('#pesquisa').fadeIn();
@@ -169,11 +180,15 @@ $(document).ready(function(){
 
                 MODAL_OPENED='PESQUISA';
             });
+
+
         }
     }
     fecharPesquisa = function(){
         $('#pesquisa').fadeOut();
         $('#btn-pesquisa').removeClass('ativo');
+        bodyV.removeClass('overlay-opened')
+
         MODAL_OPENED=null;
     }
 
@@ -199,6 +214,7 @@ $(document).ready(function(){
             fecharOutros();
         }else{
             fecharOutros();
+            bodyV.addClass('overlay-opened')
             var pageEdition=getCurrentEdition();
             var pageAnchor=getCurrentAnchor();
             var url=getPagesLink('comentarios')+'?edicao='+pageEdition+'&pagina='+pageAnchor;
@@ -209,11 +225,14 @@ $(document).ready(function(){
 
                 MODAL_OPENED='COMENTA';
             });
+
+
         }
     }
     fecharComentar = function(){
         $('#comentar').fadeOut();
         $('#btn-comentar').removeClass('ativo');
+        bodyV.removeClass('overlay-opened')
         MODAL_OPENED=null;
     }
 
@@ -227,8 +246,8 @@ $(document).ready(function(){
         fecharIndice();
         fecharTodasEdicoes();
         fecharEnquete();
-        $('body').removeClass('overlay-opened');
-
+        bodyV.removeClass('overlay-opened');
+        $('#header li a').removeClass('ativo');
         $('.overlay-content').fadeOut();
 
         MODAL_OPENED=null;

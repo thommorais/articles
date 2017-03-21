@@ -173,9 +173,9 @@
 
             <div class="icones-direita">
                 <ul>
-                    <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.contadorVisitas && page.visitas > 0}">
+                    <%-- <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.contadorVisitas && page.visitas > 0}">
                         <li class="views cor-disabled" title="<fmt:message key='site.visitas'/>"><a href="javascript:void(0)"><span><c:out value="${page.visitas}"/></span><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                    </c:if>
+                    </c:if> --%>
                     <%-- <li><a id="btn-fullscreen" href="javascript:void(0);" title="Fullscreen" onclick="openFullScreen();"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a></li> --%>
                     <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.pesquisa}">
                         <li><a id="btn-pesquisa" href="javascript:void(0);" title="<fmt:message key='site.procurar'/>" onclick="abrirPesquisa();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -270,6 +270,7 @@
         <link rel="stylesheet" href="<%= base %>flip/jornal/skins/article/css/article-horizontal.css">
         <script type="text/javascript" src="<%= base%>flip/jornal/skins/article/js/jquery.columnizer.js" ></script>
         <script type="text/javascript" src="<%= base%>flip/jornal/skins/article/js/article-horizontal.js" ></script>
+
         <div id="article-reader">
             <div id="wrapper">
                 <div class="wide">
@@ -290,7 +291,7 @@
                     <h2><c:out value="${article.chamada}"/></h2>
                     <p>
                         <c:out value="${article.textoResumo}" escapeXml="false"/><br/>
-                        <a href="javascript:abreArtigo('<c:out value='${article.cd}'/>');" class="btn btn-block btn-primary btn-primary leiamais columnbreak">Leia essa mat?ria <span class="glyphicon glyphicon-arrow-right"></span></a>
+                        <a href="javascript:abreArtigo('<c:out value='${article.cd}'/>');" class="btn btn-block btn-primary btn-primary leiamais columnbreak">Leia essa matéria <span class="glyphicon glyphicon-arrow-right"></span></a>
                     </p>
                     </c:forEach>
                  </div>
@@ -458,12 +459,12 @@
 
       <header>
         <h2>Multimídia</h2>
-        <span>Filtrar por:
+        <%-- <span>Filtrar por:
           <select>
             <option value="">Video</option>
             <option value="">Fotos</option>
           </select>
-        </span>
+        </span> --%>
       </header>
 
       <button type="button" class="close"></button>

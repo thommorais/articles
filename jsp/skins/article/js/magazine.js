@@ -973,7 +973,8 @@ function getPageCount() {
 }
 function gotoAnchor(anchor) {
     anchor = anchor.replace("anch", "");
-    //console.log('procurando'+anchor);
+
+    console.log('procurando'+anchor);
 
     for (var i = 0; i < pageArray.length; i++) {
         if (pageArray[i].id == anchor) {

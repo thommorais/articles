@@ -250,6 +250,12 @@ $(document).ready(function(){
         $('#header li a').removeClass('ativo');
         $('.overlay-content').fadeOut();
 
+        if(ARTICLE_OPENED == true){
+          jQuery("#article-reader").hide();
+          jQuery("#reader").show();
+          jQuery("footer").show();
+        }
+
         MODAL_OPENED=null;
     }
 

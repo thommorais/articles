@@ -40,3 +40,20 @@
   }
 
 }
+
+#switch-mode{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  @include transform(translateY(-50%));
+
+  button{
+    height: 60px;
+    width: 60px;
+    background: $color-two;
+    border-radius: 0 3px 3px 0;
+    border: none;
+    box-shadow: 0 2px 2px 2px rgba($color-three,0.1);
+  }
+
+}

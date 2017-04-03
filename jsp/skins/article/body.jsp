@@ -188,6 +188,8 @@
                     <c:if test="${page.flipModeloPublicacaoidid_modelo.prefs.exportar || page.flipModeloPublicacaoidid_modelo.prefs.modoTexto || page.flipModeloPublicacaoidid_modelo.prefs.facebook}">
                         <li><a id="btn-exportar" href="javascript:void(0);" onclick="abrirShare();" title="<fmt:message key='site.compartilhar.exportar'/>"><i aria-hidden="true" class="fa fa-share-alt"></i></a></li>
                     </c:if>
+                    <li><a id="btn-pesquisa" href="javascript:void(0);" title="<fmt:message key='site.procurar'/>" onclick="abrirAjuda();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+
                 </ul>
             </div>
             <c:if test="${!empty dataEdicao}">
@@ -471,22 +473,16 @@
 
       <div id="lightgallery">
 
-        <a href="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5Njk1Mjc5N15BMl5BanBnXkFtZTgwNDQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg" class="multimidia-item">
-          <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5Njk1Mjc5N15BMl5BanBnXkFtZTgwNDQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg"></figure>
-          <h3>Whiplash</h3>
-          <h4>2014 - Andrew</h4>
-        </a>
-
         <a href="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE2NTQ4NTY0MF5BMl5BanBnXkFtZTgwMDQ0NzQ5MTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg" class="multimidia-item">
           <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE2NTQ4NTY0MF5BMl5BanBnXkFtZTgwMDQ0NzQ5MTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"></figure>
-          <h3>Whiplash</h3>
-          <h4>2014 - Andrew</h4>
+          <h3>Titulo do Video</h3>
+          <h4>Edição: 234</h4>
         </a>
 
         <a href="https://www.youtube.com/watch?v=meBbDqAXago"  class="multimidia-item video">
           <figure><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY3NjMxNzQ0Ml5BMl5BanBnXkFtZTgwNzQ5NTc4MDE@._V1_SY1000_SX1500_AL_.jpg"></figure>
-          <h3>Whiplash</h3>
-          <h4>2014 - Andrew</h4>
+          <h3>Titulo do Video</h3>
+          <h4>Edição: 234</h4>
         </a>
 
       </div>

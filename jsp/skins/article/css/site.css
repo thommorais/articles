@@ -855,6 +855,7 @@ footer#footer .sair .btn-sair span {
 #pesquisa .busca {
   margin: 40px 0;
   padding: 20px;
+  max-width: 720px;
   background: rgba(255, 255, 255, 0.17);
 }
 
@@ -898,8 +899,8 @@ footer#footer .sair .btn-sair span {
 }
 
 #pesquisa .dica {
-    display: inline-block;
-    margin: 10px 0px 0px 40px;
+    display: block;
+    margin: 10px 0;
     font-size: 12px;
     color: #CCCCCC;
     font-weight: 100;

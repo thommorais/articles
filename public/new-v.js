@@ -2730,11 +2730,33 @@ class Folder {
 
 }
 
+function cached(url){
+  let lastUrl = null
+  return lastUrl
+}
+
 function addtoFavorite(){
 
-  let ins = body.querySelector('.multimidia_textfield').value
+  let ins   = body.querySelector('.page_left .pageimg'),
+      page  = ins.getAttribute('page-id'),
+      url   = ins.querySelector('img').getAttribute('src'),
+      fav = document.querySelector('[data-overlay="mdl-favoritos"] #folders'),
+      template = `<a class="file favorited drag" data-folder="false" data-name="${page}" href="javascript:void(0);" onclick="gotoAnchor('anch${page}',false); return false;" class="multimidia-item">
+                    <figure><img class="img-responsive" src="${url.replace('normal', 'thumb')}"></figure>
+                  </a>`
 
-  console.info(ins)
+  //fav.insertAdjacentHTML('beforeend', template)
+
+    let obj = {
+          id : page,
+          url : url,
+          template : template
+        }
+
+
+  //load()
+  console.log(obj)
+  return obj
 
 }
 
@@ -2747,6 +2769,7 @@ function addtoFavorite(){
     this.save   = this.modal.querySelector('#notes-form')
     this.note   = this.modal.querySelector('#note')
     this.close  = this.modal.querySelector('.md-close')
+    this.text   = ''
     this.span   = ''
     this.close.addEventListener( 'click', this.closer.bind(this))
     this.save.addEventListener( 'submit', this._add.bind(this))
@@ -2755,7 +2778,18 @@ function addtoFavorite(){
   init(notes){
 
     if(!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
-    notes.map( e => this.imgWrp.appendChild( this.template(e.text, e.x, e.y, 1) ) )
+    notes.map( e => {
+      this.imgWrp.appendChild( this.template(e.text, e.x, e.y, 1) )
+      console.log(e.page)
+    })
+  }
+
+  open(e){
+
+    this.modal.querySelector('h3').innerHtml = 'Editar Nota'
+    console.log(this.modal.querySelector('h3'))
+    this.save.querySelector('textarea').value = e.target.dataset.text
+    this.opner()
   }
 
   opner() {
@@ -2783,7 +2817,7 @@ function addtoFavorite(){
     el.insertAdjacentHTML('beforeend',  inner)
 
     e.target.appendChild(el)
-    e.target.style.opacity = 1
+    e.target.style.opacity = 0.6
   }
 
   _add(e){
@@ -2830,17 +2864,21 @@ function addtoFavorite(){
     this.span.style.top = `${y}px`
     this.span.style.opacity = o
 
+    this.text = value
+
+
     let el   = document.createElement('div')
     let inner = `<div>${value}</div>`
     el.classList.add('note-element')
 
     el.insertAdjacentHTML('beforeend',  inner)
     this.span.appendChild(el)
-    this.span.insertAdjacentHTML('beforeend',  `<i class="fa fa-sticky-note-o" aria-hidden="true"></i>`)
+    this.span.insertAdjacentHTML('beforeend', `<i class="fa fa-sticky-note" aria-hidden="true"></i>`)
 
     this.span.addEventListener('dragstart', this.handleDragStart.bind(this), false)
     this.span.addEventListener('dragend', this.handleDragEnd.bind(this), false)
-    console.log(this.span)
+    this.span.addEventListener('click', this.open.bind(this), false)
+
     return this.span
   }
 

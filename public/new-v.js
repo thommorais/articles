@@ -145,12 +145,10 @@
 
 })();
 
-var body,
-    note
+var body = '';
 
 DomReady.ready(function() {
    body = document.querySelector('body')
-   note = new Note()
 });
 
 /*!
@@ -2760,34 +2758,36 @@ function addtoFavorite(){
 
 }
 
- class Note{
+class Note {
 
   constructor(notes) {
-    this.main   = body.querySelector('#reader')
+
+    this.main = document.querySelector('#reader')
     this.imgWrp = this.main.querySelector('#readercontainer') || false
-    this.modal  = body.querySelector('#notes')
-    this.save   = this.modal.querySelector('#notes-form')
-    this.note   = this.modal.querySelector('#note')
-    this.close  = this.modal.querySelector('.md-close')
-    this.text   = ''
-    this.span   = ''
-    this.close.addEventListener( 'click', this.closer.bind(this))
-    this.save.addEventListener( 'submit', this._add.bind(this))
+
+    
+    this.modal = document.querySelector('#notes')
+    this.save = this.modal.querySelector('#notes-form')
+    this.note = this.modal.querySelector('#note')
+    this.close = this.modal.querySelector('.md-close')
+    this.text = ''
+    this.span = ''
+    this.close.addEventListener('click', this.closer.bind(this))
+    this.save.addEventListener('submit', this._add.bind(this))
   }
 
-  init(notes){
+  init(notes, especificNote) {
 
-    if(!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
-    notes.map( e => {
-      this.imgWrp.appendChild( this.template(e.text, e.x, e.y, 1) )
-      console.log(e.page)
+    if (!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
+
+    notes.map(e => {
+      if (e.page == especificNote) this.imgWrp.appendChild(this.template(e.text, e.x, e.y, e.id, 1))
     })
   }
 
-  open(e){
+  open(e) {
 
     this.modal.querySelector('h3').innerHtml = 'Editar Nota'
-    console.log(this.modal.querySelector('h3'))
     this.save.querySelector('textarea').value = e.target.dataset.text
     this.opner()
   }
@@ -2804,45 +2804,70 @@ function addtoFavorite(){
     this.main.style.opacity = 1
   }
 
-  showNote(e){
+  clear() {
+
+    let n = document.querySelectorAll('.note-added')
+
+    for (let i = 0; n.length > i; i++) {
+      n[i].remove()
+    }
+
+  }
+
+  showNote(e) {
 
     e.stopPropagation()
 
     let text = e.target.dataset.text
-    let el   = document.createElement('div')
+    let el = document.createElement('div')
     let inner = `<div>${text}</div>`
 
     el.classList.add('note-element')
-    el.addEventListener('click', function(e){ e.stopPropagation() })
-    el.insertAdjacentHTML('beforeend',  inner)
+    el.addEventListener('click', function (e) { e.stopPropagation() })
+    el.insertAdjacentHTML('beforeend', inner)
 
     e.target.appendChild(el)
     e.target.style.opacity = 0.6
   }
 
-  _add(e){
+  _add(e) {
+    
     e.preventDefault()
 
-    if(!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
-    if(this.note.value) this.imgWrp.appendChild(this.template(this.note.value, 15, 15, 1))
+    if (!this.imgWrp) this.imgWrp = this.main.querySelector('#readercontainer .pagecontainer')
+    if (this.note.value) this.imgWrp.appendChild(this.template(this.note.value, 15, 15, Date.now(), 1))
 
+    this.saving(this.note.value, 15, 15, Date.now())
     this.closer()
   }
 
-  handleDragStart(e){
+  saving(txt, x, y, id) {
+
+    console.log(txt, x, y, id)
+
+    // return {
+    //   x: x,
+    //   y: y,
+    //   text: txt,
+    //   id: id
+    // }
+  }
+
+  handleDragStart(e) {
 
     e.target.style.opacity = 0.3
     e.target.querySelector('.note-element').style.display = 'none'
   }
 
-  handleDragEnd(e){
-
+  handleDragEnd(e) {
 
     let l = this.imgWrp.getBoundingClientRect().left - 5
     let t = this.imgWrp.getBoundingClientRect().top - 5
 
     let x = e.pageX - l
     let y = e.pageY - t - e.toElement.clientHeight
+    let i = e.target.dataset.id
+    let tx = e.target.dataset.text
 
     e.target.style.left = `${x}px`
     e.target.style.top = `${y}px`
@@ -2851,30 +2876,32 @@ function addtoFavorite(){
 
     e.target.querySelector('.note-element').style.display = 'block'
 
+    this.saving(tx, x, y, i)
 
   }
 
-  template(value, x, y, o) {
+  template(value, x, y, id, o) {
 
     this.span = document.createElement('span')
     this.span.classList.add('note-added')
     this.span.setAttribute('draggable', 'true')
     this.span.setAttribute('data-text', value)
+    this.span.setAttribute('data-id', id)
+
     this.span.style.left = `${x}px`
     this.span.style.top = `${y}px`
     this.span.style.opacity = o
 
     this.text = value
 
-
-    let el   = document.createElement('div')
+    let el = document.createElement('div')
     let inner = `<div>${value}</div>`
-    el.classList.add('note-element')
 
-    el.insertAdjacentHTML('beforeend',  inner)
+    el.classList.add('note-element')
+    el.insertAdjacentHTML('beforeend', inner)
+
     this.span.appendChild(el)
     this.span.insertAdjacentHTML('beforeend', `<i class="fa fa-sticky-note" aria-hidden="true"></i>`)
-
     this.span.addEventListener('dragstart', this.handleDragStart.bind(this), false)
     this.span.addEventListener('dragend', this.handleDragEnd.bind(this), false)
     this.span.addEventListener('click', this.open.bind(this), false)
@@ -2884,7 +2911,7 @@ function addtoFavorite(){
 
 }
 
-function newNote(){
+function newNote() {
   note.opner()
 }
 
@@ -2944,14 +2971,13 @@ function newNote(){
 
   }
 
-
- DomReady.ready(function() {
+    DomReady.ready(function () {
 
   $("#lightgallery").lightGallery();
 
   let btns = document.querySelectorAll('.menu-item')
 
-  for(let btn of btns){
+  for (let btn of btns) {
     new Menu(btn)
   }
 
@@ -2960,8 +2986,4 @@ function newNote(){
 
   load()
 
-  note.init(notes)
-
-  let d  = document.querySelector('#reader')
-  console.log(d)
 })

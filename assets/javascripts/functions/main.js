@@ -1,11 +1,10 @@
-
- DomReady.ready(function() {
+    DomReady.ready(function () {
 
   $("#lightgallery").lightGallery();
 
   let btns = document.querySelectorAll('.menu-item')
 
-  for(let btn of btns){
+  for (let btn of btns) {
     new Menu(btn)
   }
 
@@ -14,8 +13,4 @@
 
   load()
 
-  note.init(notes)
-
-  let d  = document.querySelector('#reader')
-  console.log(d)
 })

@@ -1,0 +1,23 @@
+.edition-thumb{
+  @extend .grid-item;
+  min-width: 120px !important;
+  vertical-align: middle;
+}
+
+
+.favorites-folders #folders .img-responsive{
+  margin: 0 auto;
+}
+
+.favorites-folders{
+
+  #folders, .new{
+    vertical-align: middle
+  }
+
+  #folders{
+    a{
+      vertical-align: middle
+    }
+  }
+}

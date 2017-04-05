@@ -1,0 +1,62 @@
+.folder, .favorite{
+    display: inline-block;
+    padding: 15px 10px;
+
+    &:hover{
+
+      background: rgba( $color-two,0.13);
+      box-shadow: 0 16px 14px 0 rgba($color-four,0.15);
+
+      .folder-svg{
+        opacity: 1;
+      }
+
+    }
+
+    span{
+      display: block;
+      color: $color-two;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    &.new{
+      position: relative;
+      opacity: 0.3;
+      border: 2px dashed $color-one;
+
+      &:before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        content: $fa-var-plus;
+        font-family: 'FontAwesome';
+        font-size: 45px;
+        text-align: center;
+        color: rgba($color-two,0.4);
+      }
+
+      .folder-svg{
+        opacity: 0.2;
+      }
+
+    }
+
+  }
+
+  .folder-svg{
+    fill: transparent;
+    text-align: center;
+    width: 123px;
+    height: 123px;
+    stroke:$color-two;
+    opacity: 0.4;
+  }
+
+.favorite{
+  img{
+    width: 100%;
+    max-width: 118px;
+  }
+}

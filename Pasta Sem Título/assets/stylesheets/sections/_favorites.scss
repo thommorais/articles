@@ -1,0 +1,66 @@
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.favorites{
+
+  .file{
+    display: inline-block;
+    max-width: 120px;
+
+    img{
+      margin: 50px 0;
+      width: 100%;
+    }
+
+  }
+
+  .folder{
+
+      &.drag{
+        cursor: move;
+      }
+
+      &.moving{
+        opacity: 0.3;
+      }
+
+      &.over{
+        @include transform(scale(1.1));
+      }
+
+      svg, span{
+        pointer-events: none;
+      }
+
+  }
+
+  .folder, .favorite{
+    margin: 0 5px 10px;
+
+    span{
+      max-width: 120px;
+      height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+
+    button{
+      border-radius: 4px;
+      border: 1px solid $color-one;
+      background-color: transparent;
+      color: $color-two;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+}

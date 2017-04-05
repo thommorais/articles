@@ -1,0 +1,59 @@
+.pagination-nav{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  @include transform(translateX(-50%));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 240px;
+  background: $color-two;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 4px 0 rgba($color-three,0.1);
+
+
+  aside{
+    margin-left: 15px;
+  }
+
+  span{
+    margin: 0 10px;
+    font-size: 15px;
+    color: $color-four;
+  }
+
+  a{
+    font-size: 21px;
+    color: $color-four;
+  }
+
+  button{
+    float: right;
+    height: 60px;
+    width: 60px;
+    border: 0;
+    background: none;
+    font-size: 21px;
+    outline: none;
+    cursor: pointer;
+  }
+
+}
+
+#switch-mode{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  @include transform(translateY(-50%));
+
+  button{
+    height: 60px;
+    width: 60px;
+    background: $color-two;
+    border-radius: 0 3px 3px 0;
+    border: none;
+    box-shadow: 0 2px 2px 2px rgba($color-three,0.1);
+  }
+
+}

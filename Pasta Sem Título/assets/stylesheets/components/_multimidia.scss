@@ -1,0 +1,64 @@
+#lightgallery{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.multimidia-item{
+  @extend .grid-item;
+}
+
+.multimidia{
+
+  header{
+    position: relative;
+    background-color: transparent;
+
+    h2{
+      margin-bottom: 15px;
+      font-weight: 400;
+      font-size: 22px;
+      color: $color-two;
+    }
+
+    span{
+      margin-left: 30px;
+      font-size: 14px;
+      color: $color-two;
+    }
+
+    h2, span{
+      display: inline-block;
+    }
+
+  }
+
+  .video{
+
+    figure{
+      position: relative;
+
+      &:before{
+        position: absolute;
+        margin: -30px 0 0 -30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 50%;
+        top: 50%;
+        height: 60px;
+        width: 60px;
+        font-family: 'FontAwesome';
+        content: $fa-var-play;
+        border-radius: 40px;
+        font-size: 35px;
+        color: $color-two;
+        text-indent: 7px;
+        background: rgba($color-three,0.63);
+
+      }
+    }
+
+  }
+
+}

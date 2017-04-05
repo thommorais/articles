@@ -1,0 +1,31 @@
+.icones-esquerda,
+.icones-direita{
+
+  ul{
+    display: flex;
+  }
+
+  li{
+
+    a{
+      display: flex;
+      height: 60px;
+      width: 60px;
+      width: 5vw;
+      min-width: 20px;
+      justify-content: center;
+      align-items: center;
+      color: $color-three;
+      font-size: 21px;
+      text-decoration: none;
+    }
+
+    .ativo{
+      background: $color-three;
+      color: $color-two;
+    }
+
+  }
+
+
+}

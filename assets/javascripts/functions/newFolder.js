@@ -1,7 +1,6 @@
-
+// Favorite Folders
 class Folder {
-
-
+  
   constructor(el) {
 
     this.wrapper = document.querySelector('#folders')
@@ -13,14 +12,15 @@ class Folder {
     this.close.addEventListener( 'click', this.closer.bind(this))
     this.save.addEventListener( 'submit', this._add.bind(this))
     el.addEventListener('click', this.opner.bind(this))
-
   }
 
   opner(e) {
+
     this.modal.classList.add('md-show')
   }
 
   closer() {
+
     this.modal.classList.remove('md-show')
   }
 
@@ -34,10 +34,10 @@ class Folder {
     this.input.value = ''
     this.closer()
     load()
-
   }
 
   template(value) {
+
     return `<a href="#" class="folder drag" data-folder="true" data-name="${value}" draggable="true">
               <svg class="svg folder-svg" role="img" title="Folder">
                 <use xlink:href="#folder"></use>
@@ -45,5 +45,4 @@ class Folder {
               <span>${value}</span>
             </a>`
   }
-
 }

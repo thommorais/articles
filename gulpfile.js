@@ -29,6 +29,7 @@ var paths = {
     'assets/javascripts/functions/favorites.js',
     'assets/javascripts/functions/notes.js',
     'assets/javascripts/functions/menu.js',
+    'assets/javascripts/functions/nouislider.js',
     'assets/javascripts/functions/main.js'
 
 

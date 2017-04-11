@@ -52,6 +52,13 @@
     height: 123px;
     stroke:$color-two;
     opacity: 0.4;
+
+      @include responsive ($ms-x-mid, 'max') {
+        width: 80px;
+        height: 80px;
+      }
+
+
   }
 
 .favorite{

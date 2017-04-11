@@ -11,6 +11,12 @@ header{
 #header-line-1{
   display: flex;
   justify-content: space-between;
+
+    @include responsive ($ms-x-mid, 'max') {
+        display: block;
+    }
+
+
 }
 
 #header-line-2{

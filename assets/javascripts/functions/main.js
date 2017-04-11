@@ -47,14 +47,22 @@ DomReady.ready(function () {
         valueOutput(elements[i])
     }
 
-    Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).forEach(function (el) {
+    Array.prototype.slice.call(body.querySelectorAll('input[type="range"]')).forEach(function (el) {
         el.addEventListener('input', function (e) {
             valueOutput(e.target)
         }, false)
     })
 
+    let hamburger = body.querySelector('.hamburger')
 
+    hamburger.addEventListener('click', function() {
+      body.classList.toggle('menu-opned')
+      hamburger.classList.toggle('open')
+    })
 
   load()
 
 })
+
+
+

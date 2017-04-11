@@ -50,3 +50,30 @@ $project-font-size : 16px;
   left: 50%;
   @include transform(translate(-50%, -50%));
 }
+
+
+/*********************************************************************
+*  =Media Screen
+*********************************************************************/
+$mobile: 320px;
+$ms-small: 540px;
+$ms-x-small: 599px;
+$ms-x-mid: 760px;
+$ms-mid: 980px;
+$ms-large: 1200px;
+
+
+/*********************************************************************
+*  =Responsive
+*********************************************************************/
+@mixin responsive($width: $ms-small, $min-max: 'min') {
+    @media (#{$min-max}-width: $width) {
+        @content;
+    }
+}
+
+@mixin responsive-orientation($width: $ms-small, $orientation: landscape, $min-max: 'min') {
+    @media only screen and (#{$min-max}-width: $width) and (orientation: $orientation) {
+        @content;
+    }
+}

@@ -1,0 +1,49 @@
+.help.overlay-content{
+
+	header {
+		position: relative;
+		background-color: transparent;
+
+		h2 {
+			margin-bottom: 15px;
+			font-weight: 400;
+			font-size: 22px;
+			color: #FFF;
+		}
+	}
+	
+	.menu {
+		padding: 20px;
+		background: rgba(255,255,255,0.13);
+		box-shadow: 0 16px 14px 0 rgba(0,0,0,0.15);
+		margin-top: 50px;
+
+		h3{
+			margin-bottom: 30px;
+			font-size: em(18px);
+			color: #fff;	
+		}
+	}
+
+	.menu ul li{
+		display: inline-block;
+		max-width: 200px;
+		padding: 10px 20px;
+		color: #fff;
+		line-height: 1.4em;
+		vertical-align: top;
+
+		i{
+			font-size: 32px;
+			display: block;
+			text-align: center;
+		}
+
+		h4{
+			margin-top: 10px;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+	}
+}

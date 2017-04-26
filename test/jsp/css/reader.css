@@ -1,0 +1,479 @@
+body{
+    margin:0px;
+    padding:0px;
+    overflow-x:hidden;
+    background-color:#dedede;     
+}
+
+.bodyzoom{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x:auto;
+}
+#reader{
+    width:100%;
+    height:100%;
+    display:block;
+    position:absolute;
+    left:0px;
+    top:50px;
+    bottom:0px;
+    right:0px;
+    z-index:1;
+    clear:both;
+}
+#readercontainer{
+    position:relative;
+    clear:both;
+    width:100%;
+    height:100%;
+    margin:0 auto;	
+}
+#readerarrows{
+    position:fixed;
+    top:50%;
+    width:100%;
+}
+#menu{
+    width:100%;
+    background-color:black;
+    position:fixed;
+    top:0px;
+    height:30px;
+    z-index:2;
+    opacity:0.4;
+}
+.page_left img{
+    display:block;
+    position: absolute;
+    right:0px;
+    max-height:100%;    
+}
+.page_right img{
+    display:block;
+    position: absolute;
+    left:0px;
+    max-height:100%;
+    min-height:90%;
+}
+.page_center img{
+    position:relative;
+    left:auto;
+    margin:0 auto;
+} 
+.pageimg{	
+    width: 100%; height: 100%; top: 0px; left: 0px; transform: scale(1, 1);
+}
+
+#canvaszoom{
+    animation-name: fadeIn; 
+    animation-duration: 0.25s;
+    visibility:hidden;
+} 
+
+@media screen and (orientation: portrait) {
+    .page_right{
+        display:none;
+    }	
+    .page{
+        width:100%;
+        height:100%;
+        position:relative;
+        float:none;
+        display:block;	
+        margin: 0 auto;
+    }	
+    .pageimg{
+        margin:0 auto;			
+    }
+}
+@media screen and (orientation: landscape) {
+    .page_right{
+        display:block;
+    }	
+    .page{
+        width:50%;
+        height:100%;
+        position:relative;
+        float:left;
+        display:block;	   
+    }	
+    .page_left .pageimg{
+        top:0px;
+        right:0px;
+    }
+    .page_right .pageimg{
+        left:0px;
+        right:0px;
+    }
+    .page_center{
+        float:none;
+        margin:0 auto;
+    }
+} 
+
+.arrow-navigate{
+    display: table;
+    position: absolute !important;
+    width: 45px !important;
+    height: 100px !important;
+    transform: translateY(-50%);
+    background-color: black;
+    opacity: 0.7;
+    z-index: 8 !important;
+    text-align:center;
+    vertical-align:middle;		
+    cursor:hand;
+    cursor:pointer;	
+}
+.arrow-navigate-right {    
+    right: 0px;
+    top: 50%;    
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;	
+    border-radius: 10px 0px 0px 10px;
+}
+.arrow-navigate-left {    
+    left: 0px;
+    top: 50%;  	
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;		
+    border-radius: 0px 10px 10px 0px;
+}
+
+.arrow-navigate i{
+    font-size:35px;
+    color:#dedede;	
+    margin-top:65%;
+    display:block;
+    cursor:hand;
+    cursor:pointer;	
+}
+
+.fa-spinner{
+    font-size:100px;
+    text-align:center;
+    position:absolute;
+    color: #000;
+    left:50%;
+    top:50%;
+    height: 100px;
+    width: 100px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  /*Added Code from here down*/
+  
+  /*Animation code for older Chrome, Safari, Opera*/
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 2.2s;
+  -webkit-animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  
+  /*Animation code for older Firefox*/
+  -moz-transition-property: -moz-transform;
+  -moz-animation-name: rotate; 
+  -moz-animation-duration: 2.2s; 
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  
+  /*Default animation code*/
+  transition-property: transform;
+  animation-name: rotate; /*Call to @keyframe rule*/
+  animation-duration: 2.2s; /*Change to speed up or slow down the animation*/
+  animation-iteration-count: infinite; /*Make the animation go forever*/
+  animation-timing-function: linear;
+}
+ 
+/*keyframes rule for older Chrome, Safari, Opera*/
+@-webkit-keyframes rotate {
+    from {-webkit-transform: translate(-50%, -50%) rotate(0deg);}
+    to {-webkit-transform: translate(-50%, -50%) rotate(360deg);}
+}
+ 
+/*keyframes rule for older Firefox version*/
+@-moz-keyframes rotate {
+    from {-moz-transform: translate(-50%, -50%) rotate(0deg);}
+    to {-moz-transform: translate(-50%, -50%) rotate(360deg);}
+}
+ 
+/*Default @keyframes rule*/
+@keyframes rotate {
+    from {transform: translate(-50%, -50%) rotate(0deg);}
+    to {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+#readerloading i:before{
+    position:absolute;
+}
+
+.stage{	
+    width:100%;
+    height:100%;
+}
+
+#readerzoom{
+    display:none;
+    position:relative;
+    clear:both;
+    width:100%;
+    height:100%;
+    margin:0 auto;
+}
+#reader-flow{
+    width:100%;
+    height:100%;
+    background-color:#fff;
+}
+#readerloading{
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+    text-align: center;    
+    background-color:#000;
+    opacity:0.5;
+    display:none;
+    vertical-align: middle;
+    margin:0 auto;
+    z-index:99999999999;
+}
+
+#reader-flow  img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+#reader-flow{
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;    
+}
+#reader-flow svg {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;   
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;    
+}
+#reader-flow svg:not(:root) {
+    overflow: visible!important;
+}
+#reader-flow svg > path,clippath{
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    -moz-user-select: none;
+    /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    /* From IE10 only */
+    user-select: none;
+    /* Not valid CSS yet, as of July 2012 */
+    -webkit-user-drag: none;
+    /* Prevents dragging of images/divs etc */
+    user-drag: none; 
+}
+.esc{
+    position: absolute;
+    top:10px;
+    left:0;
+    width:100%;
+    height:40px;
+    z-index:10000;
+}
+
+.esc > div{
+    width:140px;
+    height:30px;
+    margin:auto;
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    font:12px arial;
+    line-height:30px;
+    color:white;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+}
+.magazine .pageimg img{
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    -ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    -o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    box-shadow:0 0 20px rgba(0,0,0,0.2);    
+}
+
+.magazine .region{
+    position:absolute;
+    overflow:hidden;
+    cursor:pointer;    
+    z-index:999999; 
+    background:rgba(0, 144, 255, 0.46);
+    opacity:0.8;
+    
+}
+.magazine .region img{
+    max-height: 40px;
+    position:absolute;
+}
+.magazine .region:hover{
+    border:1px #fff solid;
+    opacity:0;
+}
+
+.magazine .video{
+    position:absolute;
+    overflow:hidden;
+    background:transparent;        
+    cursor:pointer;
+    background:rgba(0, 144, 255, 0.46);
+    z-index:999999;
+    opacity:0.8;
+}
+
+.magazine .audiopicture{
+    position:absolute;
+    overflow:hidden;
+    background:transparent;        
+    cursor:pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    filter: alpha(opacity=1);
+    *background: #fff;
+    *opacity: 1;
+    z-index:999999;
+    opacity:1;
+}
+
+.magazine .search{
+    position:absolute;
+    overflow:hidden;
+    background:yellow;
+    opacity:0.4;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+    cursor:pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    *Background: #fff;
+    *Opacity: 0;
+    z-index:999999;
+}
+
+.magazine .gallery{
+    position:absolute;
+    overflow:hidden;   
+    opacity:0.8;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+    cursor:pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    *background: #fff;
+    *opacity: 0;
+    z-index:999999;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    -ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    -o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    box-shadow:0 0 20px rgba(0,0,0,0.2);    
+}
+
+.galleryimg{
+    position:absolute;
+    text-align:center;
+    margin:0 auto;    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);        
+    width:40%; 
+    top:30%;
+    left:30%;    
+    display:block;    
+}
+.linkimg{
+    position:absolute;
+    text-align:center;
+    margin:0 auto;    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);        
+    width:40%; 
+    top:30%;
+    left:30%;    
+    display:block;    
+}
+.videoimg{
+    position:absolute;
+    text-align:center;
+    margin:0 auto;    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);       
+    width:40%;
+    top:30%;
+    left:30%;        
+    display:block;
+}
+.iconimg{
+
+}
+.magazine .region img:hover{
+    background:white;
+    opacity:0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+}
+.magazine .region.zoom img{
+    opacity:0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    filter: alpha(opacity=1);
+}
+
+.magazine .region.zoom img:hover{
+    opacity:0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+}
+.page_left .pagecontainer{
+    position:absolute;
+    right:0px;   
+}
+.page_right .pagecontainer{
+    position:absolute;
+    left:0px;   
+}
+.page_center .pagecontainer{
+    position:relative;
+    margin:0 auto;
+}
+.page_html5{
+    display:none;
+    width:100%;
+    margin:0 auto;
+    height:100%;
+}
+.htmlcontent{
+    height:100%;
+}
+#article-reader{
+    display:none;
+}
+.logotipo{
+    mix-blend-mode:difference;
+}

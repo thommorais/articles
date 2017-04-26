@@ -1,0 +1,178 @@
+.hamburger {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    width: 40px;
+    height: 30px;
+    z-index: 999;
+    margin: 0;
+    @include transform(rotate(0deg));
+    @include transition(0.5s ease-in-out);
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    display: none;
+
+    @include responsive ($ms-x-mid, 'max') {
+        display: block;
+    }
+
+}
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 50%;
+    background-color: #030303;
+    opacity: 1;
+    @include transform(rotate(0deg));
+    @include transition(0.25s ease-in-out);
+
+}
+
+.hamburger span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+.hamburger span:nth-child(odd) {
+    left: 0;
+    border-radius: 9px 0 0 9px;
+}
+
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2) {
+    top: 0;
+}
+
+.hamburger span:nth-child(3),
+.hamburger span:nth-child(4) {
+    top: 12px;
+}
+
+.hamburger span:nth-child(5),
+.hamburger span:nth-child(6) {
+    top: 24px;
+}
+
+.hamburger.open span:nth-child(1),
+.hamburger.open span:nth-child(6) {
+    @include transform(rotate(45deg));
+}
+
+.hamburger.open span:nth-child(2),
+.hamburger.open span:nth-child(5) {
+  @include transform(rotate(-45deg));
+}
+
+.hamburger.open span:nth-child(1) {
+    left: 3px;
+    top: 8px;
+}
+
+.hamburger.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 8px;
+}
+
+.hamburger.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(5) {
+    left: 3px;
+    top:20px;
+}
+
+.hamburger.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top:20px;
+}
+
+.menu{
+  width: 100%;
+
+    @include responsive ($ms-x-mid, 'max') {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 80px;
+       padding-top: 60px;
+       background: #fff;
+      @include transform(translate3d(-83px, 0, 0));
+      @include transition(transform 0.25s ease-in-out);
+    }
+
+}
+
+.menu-opned{
+  .menu{
+      @include transform(translate3d(0, 0, 0));
+  }
+}
+
+
+
+.icones-esquerda,
+.icones-direita{
+
+    @include responsive ($ms-x-mid, 'max') {
+       float: none !important;
+    }
+
+
+  ul{
+    display: flex;
+
+    @include responsive ($ms-x-mid, 'max') {
+        display: block;
+    }
+
+  }
+
+  li{
+
+    @include responsive ($ms-x-mid, 'max') {
+       float: none !important;
+    }
+
+
+    a{
+      display: flex;
+      height: 60px;
+      width: 60px;
+      width: 5vw;
+      min-width: 20px;
+      justify-content: center;
+      align-items: center;
+      color: $color-three;
+      font-size: 21px;
+      text-decoration: none;
+
+      @include responsive ($ms-x-mid, 'max') {
+        height: 40px;
+        width: 40px;
+        margin: 0 auto;
+      }
+
+    }
+
+    .ativo{
+      background: $color-three;
+      color: $color-two;
+    }
+
+  }
+
+
+
+}
+
+

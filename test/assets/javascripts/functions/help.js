@@ -1,0 +1,3 @@
+conta abrirAjuda = function(){
+    
+}

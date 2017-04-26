@@ -1,0 +1,82 @@
+#switchToVertical{
+	display: none;
+
+
+	span{
+		position: absolute;
+		top: 50%;
+		line-height: 2px;
+		@include transform(translate(-50%, -50%));
+	}
+
+
+	i{
+		display: block;
+		width: 30px;
+		height: 10px;
+		margin: 0 auto 4px;
+		background: #262626;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.articles-opened{
+	#switchToVertical{
+		display: block;
+
+
+		
+	}
+
+	.column{
+		display: table;
+		margin: 50px auto 70px;
+	}
+
+	.wide .leiamais{
+		position: relative;
+		top: 30px;
+		float: right;
+		width: auto;
+		display: table;
+	}
+
+}
+
+.articlesVerticalMode{
+
+	#switchToVertical{
+		span{
+			width: 60px;
+		}
+
+		i{
+			display: inline-block;
+			width: 10px;
+			height: 30px;
+			margin: 0 4px 0 0;
+
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+
+	}
+
+	#article-reader #wrapper{
+	overflow-y: scroll;
+
+		> .wide{
+			margin: 0 auto;
+			max-width: 960px;
+		}
+
+	}
+
+
+}
+

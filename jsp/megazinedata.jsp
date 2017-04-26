@@ -1,1 +1,0 @@
-<% br.com.maven.flip.util.xml.FlipMegazineFormatter.processFormatter(request, response); %>

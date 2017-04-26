@@ -1,1 +1,0 @@
-<%= br.com.maven.flip.javasql.dao.MateriaDAO.getCapa(Integer.parseInt(request.getParameter("capa"))) %>

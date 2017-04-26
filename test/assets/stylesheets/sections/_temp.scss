@@ -1,0 +1,205 @@
+#stOverlay {
+  top: 60px !important;
+  opacity: .95 !important;
+  z-index: 9 !important;
+  background-color: #262626 !important;
+
+    @include responsive ($ms-x-mid, 'max') {
+      top: 48px !important;
+    }
+
+}
+
+.titulo{
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #FFF;
+}
+
+select{
+  color: #000 !important;
+}
+
+.modal-bg{
+  display: none !important;
+}
+
+
+#todas-edicoes .edicoes{
+  height: auto !important
+}
+
+
+button.close{
+  font-size: 13px;
+}
+
+body{
+  font-family: 'Roboto', sans-serif !important;
+  color: $color-four;
+}
+
+header#header{
+  height: auto !important;
+}
+
+.bg-geral{
+  background: #fff !important;
+
+}
+
+header#header .icones-esquerda ul li{
+  height: auto !important;
+}
+
+header#header div.centro {
+    position: absolute !important;
+    width: auto !important;
+    line-height: initial !important;
+    height: initial !important;
+    vertical-align: initial !important;
+    text-align: initial !important;
+    font-size: initial !important;
+    font-weight: initial !important;
+    display: initial !important;
+
+      @include responsive ($ms-x-mid, 'max') {
+        position: absolute !important;
+        top: 23px;
+        width: 100% !important;
+        display: block !important;
+        background: #fff;
+        height: 45px !important;
+
+      }
+
+}
+
+header#header div.centro img {
+    vertical-align: top;
+    max-height: 31px !important;
+    margin-top: 0 !important;
+    mix-blend-mode: normal !important;
+
+      @include responsive ($ms-x-mid, 'max') {
+        display: block;
+        margin: 5px auto !important;
+      }
+
+}
+
+
+header#header .icones-esquerda ul li a,
+header#header .icones-direita ul li a{
+  display: flex !important;
+  align-items: center;
+  height: 60px !important;
+  max-width: 60px !important;
+  min-width: 40px !important;
+  width: 5vw !important;
+
+  @include responsive ($ms-x-mid, 'max') {
+    height: 40px !important;
+    width: 40px;
+  }
+
+}
+
+
+
+#header-line-2{
+  height: auto !important;
+}
+.close{
+  opacity: 1 !important;
+}
+
+@media (max-width : 768px) {
+  header#header .icones-esquerda ul li a,
+  header#header .icones-direita ul li a{
+    min-width: 40px !important;
+
+    .fa{
+      font-size: 20px;
+    }
+
+  }
+
+
+  #todas-edicoes .busca {
+    padding: 20px 10px;
+  }
+
+  #todas-edicoes .busca p{
+    margin-right: 0;
+    display: block;
+    margin-bottom: 10px;
+
+    input{
+      padding: 5px;
+    }
+  }
+
+
+  #pesquisa .input-text input{
+    width: 100%;
+  }
+
+  #pesquisa .input-text .btn-modal{
+    display: table;
+    margin: 0 auto 10px;
+  }
+
+  footer#footer .paginacao input{
+    width: 60px;
+  }
+
+  .paginacao .pagination{
+    display: none;
+  }
+
+  #footer nav button{
+    padding: 15px;
+  }
+
+  #switch-mode{
+    display: none !important;
+  }
+
+
+  .wide h1{
+    font-size: 32px !important;
+  }
+
+  #wrapper{
+    margin-top: 50px;
+    padding: 0;
+  }
+
+  .bodyzoom #zoom-slider,
+  .paginacao{
+    display: none !important;
+  }
+
+  footer#footer a.logo-maven{
+    right: 10px;
+  }
+
+  .esc{
+    display: none !important;
+    font-size: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .wide-column-border-right{
+    border-right: none !important;
+    padding: 0 3px !important;
+  }
+
+  #btn-fullscreen{
+    display: none;
+  }
+
+}
